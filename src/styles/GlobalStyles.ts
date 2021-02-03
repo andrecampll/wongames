@@ -17,11 +17,19 @@ export default createGlobalStyle`
   }
 
   body, input, button, textarea {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 16px;
   }
 
   button {
     border: 0;
+  }
+
+  html, body, #__next {
+    height: 100%;
+  }
+
+  html {
+    font-size: 62.5%;
   }
 `;
