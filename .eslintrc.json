@@ -58,7 +58,8 @@
     "no-shadow":"off",
     "no-plusplus": "off",
     "no-param-reassign": "off",
-    "react/jsx-curly-newline": "off"
+    "react/jsx-curly-newline": "off",
+    "import/no-extraneous-dependencies": "off"
   },
   "settings": {
     "import/resolver": {
