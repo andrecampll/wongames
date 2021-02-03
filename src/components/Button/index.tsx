@@ -1,9 +1,9 @@
 import { Wrapper } from './styles';
 
-const Main = () => (
+const Button = () => (
   <Wrapper>
-    <h1>Hello</h1>
+    <h1>Button</h1>
   </Wrapper>
 );
 
-export default Main;
+export default Button;
