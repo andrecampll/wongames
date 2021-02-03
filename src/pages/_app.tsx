@@ -6,6 +6,7 @@ export default function App({ Component, pageProps }) {
     <>
       <Component {...pageProps} />
       <Head>
+        <link rel="manifest" href="/manifest.json" />
         <title>WonGames</title>
       </Head>
 
