@@ -9,18 +9,18 @@ import { Wrapper, IconWrapper, LogoWrapper, MenuGroup } from './styles';
 const Menu = () => (
   <Wrapper>
     <IconWrapper>
-      <MenuIcon />
+      <MenuIcon aria-label="Open Menu" />
     </IconWrapper>
     <LogoWrapper>
       <Logo hideOnMobile />
     </LogoWrapper>
     <MenuGroup>
       <IconWrapper>
-        <SearchIcon />
+        <SearchIcon aria-label="Search" />
       </IconWrapper>
 
       <IconWrapper>
-        <ShoppingCartIcon />
+        <ShoppingCartIcon aria-label="Open Shopping Cart" />
       </IconWrapper>
     </MenuGroup>
   </Wrapper>
