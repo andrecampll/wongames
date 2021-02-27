@@ -20,6 +20,7 @@ import {
 } from './styles';
 
 import Button from '../Button';
+import MediaMatch from '../MediaMatch';
 
 export type MenuProps = {
   username?: string;
@@ -30,12 +31,23 @@ const Menu = ({ username }: MenuProps) => {
 
   return (
     <Wrapper>
-      <IconWrapper onClick={() => setIsOpen(true)}>
-        <MenuIcon aria-label="Open Menu" />
-      </IconWrapper>
+      <MediaMatch lessThan="medium">
+        <IconWrapper onClick={() => setIsOpen(true)}>
+          <MenuIcon aria-label="Open Menu" />
+        </IconWrapper>
+      </MediaMatch>
+
       <LogoWrapper>
         <Logo hideOnMobile />
       </LogoWrapper>
+
+      <MediaMatch greaterThan="medium">
+        <MenuNav>
+          <MenuLink href="#">Home</MenuLink>
+          <MenuLink href="#">Explore</MenuLink>
+        </MenuNav>
+      </MediaMatch>
+
       <MenuGroup>
         <IconWrapper>
           <SearchIcon aria-label="Search" />
@@ -44,6 +56,12 @@ const Menu = ({ username }: MenuProps) => {
         <IconWrapper>
           <ShoppingCartIcon aria-label="Open Shopping Cart" />
         </IconWrapper>
+
+        {!username && (
+          <MediaMatch greaterThan="medium">
+            <Button>Sign in</Button>
+          </MediaMatch>
+        )}
       </MenuGroup>
 
       <MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
