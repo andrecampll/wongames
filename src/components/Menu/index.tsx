@@ -18,9 +18,14 @@ import {
   RegisterBox,
   CreateAccount,
 } from './styles';
+
 import Button from '../Button';
 
-const Menu = () => {
+export type MenuProps = {
+  username?: string;
+};
+
+const Menu = ({ username }: MenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -46,19 +51,28 @@ const Menu = () => {
         <MenuNav>
           <MenuLink href="#">Home</MenuLink>
           <MenuLink href="#">Explore</MenuLink>
+
+          {!!username && (
+            <>
+              <MenuLink href="#">My account</MenuLink>
+              <MenuLink href="#">Wishlist</MenuLink>
+            </>
+          )}
         </MenuNav>
 
-        <RegisterBox>
-          <Button fullWidth size="large">
-            Log in now
-          </Button>
+        {!username && (
+          <RegisterBox>
+            <Button fullWidth size="large">
+              Log in now
+            </Button>
 
-          <span>or</span>
+            <span>or</span>
 
-          <CreateAccount href="#" title="Sign Up">
-            Sign Up
-          </CreateAccount>
-        </RegisterBox>
+            <CreateAccount href="#" title="Sign Up">
+              Sign Up
+            </CreateAccount>
+          </RegisterBox>
+        )}
       </MenuFull>
     </Wrapper>
   );
