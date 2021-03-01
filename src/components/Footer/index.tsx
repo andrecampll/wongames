@@ -19,7 +19,7 @@ const Footer = () => (
 
       <Column>
         <Heading color="black" lineColor="secondary" lineBottom size="small">
-          Follow us
+          Follow Us
         </Heading>
 
         <nav aria-labelledby="social media">
