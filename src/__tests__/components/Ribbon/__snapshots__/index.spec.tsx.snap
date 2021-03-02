@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ribbon should be able to render 1`] = `
+.c0 {
+  background-color: #F231A5;
+  font-size: 1.4rem;
+  height: 3.6rem;
+}
+
+<div
+  class="c0"
+  color="primary"
+>
+  Best Seller
+</div>
+`;
+
+exports[`Ribbon should be able to render with default font-size 1`] = `
+.c0 {
+  background-color: #F231A5;
+  font-size: 1.4rem;
+  height: 3.6rem;
+}
+
+<div
+  class="c0"
+  color="primary"
+>
+  Best Seller
+</div>
+`;
+
+exports[`Ribbon should be able to render with primary color 1`] = `
+.c0 {
+  background-color: #F231A5;
+  font-size: 1.4rem;
+  height: 3.6rem;
+}
+
+<div
+  class="c0"
+  color="primary"
+>
+  Best Seller
+</div>
+`;
+
+exports[`Ribbon should be able to render with secondary color 1`] = `
+.c0 {
+  background-color: #3CD3C1;
+  font-size: 1.4rem;
+  height: 3.6rem;
+}
+
+<div
+  class="c0"
+  color="secondary"
+>
+  Best Seller
+</div>
+`;
+
+exports[`Ribbon should be able to render with small font-size 1`] = `
+.c0 {
+  background-color: #F231A5;
+  font-size: 1.2rem;
+  height: 2.6rem;
+}
+
+<div
+  class="c0"
+  color="primary"
+>
+  Best Seller
+</div>
+`;
