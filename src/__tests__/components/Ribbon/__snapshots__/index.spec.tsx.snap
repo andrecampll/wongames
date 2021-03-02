@@ -2,9 +2,47 @@
 
 exports[`Ribbon should be able to render 1`] = `
 .c0 {
-  background-color: #F231A5;
+  position: absolute;
+  top: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 600;
+  color: #FAFAFA;
   font-size: 1.4rem;
   height: 3.6rem;
+  background-color: #F231A5;
+  font-size: 1.4rem;
+  padding: 0 2.4rem;
+  height: 3.6rem;
+  right: -2rem;
+}
+
+.c0::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  border-style: solid;
+  border-left-width: 0rem;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-right-width: 1rem;
+}
+
+.c0::before {
+  border-left-color: #b20b6f;
+  border-top-color: #b20b6f;
+}
+
+.c0::before {
+  top: 3.6rem;
+  border-top-width: 1rem;
+  border-right-width: 2rem;
 }
 
 <div
@@ -17,9 +55,47 @@ exports[`Ribbon should be able to render 1`] = `
 
 exports[`Ribbon should be able to render with default font-size 1`] = `
 .c0 {
-  background-color: #F231A5;
+  position: absolute;
+  top: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 600;
+  color: #FAFAFA;
   font-size: 1.4rem;
   height: 3.6rem;
+  background-color: #F231A5;
+  font-size: 1.4rem;
+  padding: 0 2.4rem;
+  height: 3.6rem;
+  right: -2rem;
+}
+
+.c0::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  border-style: solid;
+  border-left-width: 0rem;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-right-width: 1rem;
+}
+
+.c0::before {
+  border-left-color: #b20b6f;
+  border-top-color: #b20b6f;
+}
+
+.c0::before {
+  top: 3.6rem;
+  border-top-width: 1rem;
+  border-right-width: 2rem;
 }
 
 <div
@@ -32,9 +108,47 @@ exports[`Ribbon should be able to render with default font-size 1`] = `
 
 exports[`Ribbon should be able to render with primary color 1`] = `
 .c0 {
-  background-color: #F231A5;
+  position: absolute;
+  top: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 600;
+  color: #FAFAFA;
   font-size: 1.4rem;
   height: 3.6rem;
+  background-color: #F231A5;
+  font-size: 1.4rem;
+  padding: 0 2.4rem;
+  height: 3.6rem;
+  right: -2rem;
+}
+
+.c0::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  border-style: solid;
+  border-left-width: 0rem;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-right-width: 1rem;
+}
+
+.c0::before {
+  border-left-color: #b20b6f;
+  border-top-color: #b20b6f;
+}
+
+.c0::before {
+  top: 3.6rem;
+  border-top-width: 1rem;
+  border-right-width: 2rem;
 }
 
 <div
@@ -47,9 +161,47 @@ exports[`Ribbon should be able to render with primary color 1`] = `
 
 exports[`Ribbon should be able to render with secondary color 1`] = `
 .c0 {
-  background-color: #3CD3C1;
+  position: absolute;
+  top: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 600;
+  color: #FAFAFA;
   font-size: 1.4rem;
   height: 3.6rem;
+  background-color: #3CD3C1;
+  font-size: 1.4rem;
+  padding: 0 2.4rem;
+  height: 3.6rem;
+  right: -2rem;
+}
+
+.c0::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  border-style: solid;
+  border-left-width: 0rem;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-right-width: 1rem;
+}
+
+.c0::before {
+  border-left-color: #1f8a7d;
+  border-top-color: #1f8a7d;
+}
+
+.c0::before {
+  top: 3.6rem;
+  border-top-width: 1rem;
+  border-right-width: 2rem;
 }
 
 <div
@@ -62,9 +214,47 @@ exports[`Ribbon should be able to render with secondary color 1`] = `
 
 exports[`Ribbon should be able to render with small font-size 1`] = `
 .c0 {
+  position: absolute;
+  top: 1.6rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 600;
+  color: #FAFAFA;
+  font-size: 1.4rem;
+  height: 3.6rem;
   background-color: #F231A5;
   font-size: 1.2rem;
+  padding: 0 1.6rem;
   height: 2.6rem;
+  right: -1.5rem;
+}
+
+.c0::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  border-style: solid;
+  border-left-width: 0rem;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-right-width: 1rem;
+}
+
+.c0::before {
+  border-left-color: #b20b6f;
+  border-top-color: #b20b6f;
+}
+
+.c0::before {
+  top: 2.6rem;
+  border-top-width: 0.7rem;
+  border-right-width: 1.5rem;
 }
 
 <div
