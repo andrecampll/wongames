@@ -2,23 +2,28 @@
 
 exports[`Highlight should be able to render background image 1`] = `
 <section
-  class="sc-bdfBwQ ftmBaq"
+  class="sc-bdfBwQ cGYIoj"
 >
+  <img
+    alt="heading 1"
+    class="sc-gsTCUz egLOHZ"
+    src="/float-image.png"
+  />
   <div
-    class="sc-gsTCUz iucpbX"
+    class="sc-dlfnbm kXoxNa"
   >
     <h2
-      class="sc-dlfnbm krYNbM"
+      class="sc-hKgILt llWGmG"
     >
       heading 1
     </h2>
     <h3
-      class="sc-hKgILt iYmoqs"
+      class="sc-eCssSg hgfixj"
     >
       heading 2
     </h3>
     <a
-      class="sc-eCssSg khmktX"
+      class="sc-jSgupP fQOmRy"
       href="/rdr2"
     >
       <span>
@@ -31,23 +36,28 @@ exports[`Highlight should be able to render background image 1`] = `
 
 exports[`Highlight should be able to render headings and button 1`] = `
 <section
-  class="sc-bdfBwQ ftmBaq"
+  class="sc-bdfBwQ cGYIoj"
 >
+  <img
+    alt="heading 1"
+    class="sc-gsTCUz egLOHZ"
+    src="/float-image.png"
+  />
   <div
-    class="sc-gsTCUz iucpbX"
+    class="sc-dlfnbm kXoxNa"
   >
     <h2
-      class="sc-dlfnbm krYNbM"
+      class="sc-hKgILt llWGmG"
     >
       heading 1
     </h2>
     <h3
-      class="sc-hKgILt iYmoqs"
+      class="sc-eCssSg hgfixj"
     >
       heading 2
     </h3>
     <a
-      class="sc-eCssSg khmktX"
+      class="sc-jSgupP fQOmRy"
       href="/rdr2"
     >
       <span>

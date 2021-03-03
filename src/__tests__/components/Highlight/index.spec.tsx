@@ -6,6 +6,7 @@ import { renderWithTheme } from '../../../utils/tests/helpers';
 const props = {
   title: 'heading 1',
   subtitle: 'heading 2',
+  floatImage: '/float-image.png',
   backgroundImage: '/img/red-dead-img.jpg',
   buttonLabel: 'Buy now',
   buttonLink: '/rdr2',
@@ -44,5 +45,15 @@ describe('Highlight', () => {
     });
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  it('should be able to render background image', () => {
+    renderWithTheme(<Highlight {...props} floatImage="/float-image.png" />);
+
+    expect(
+      screen.getByRole('img', {
+        name: props.title,
+      }),
+    ).toHaveAttribute('src', '/float-image.png');
   });
 });
