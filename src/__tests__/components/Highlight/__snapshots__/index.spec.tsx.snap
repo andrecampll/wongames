@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Highlight should be able to render background image 1`] = `
+<section
+  class="sc-bdfBwQ ftmBaq"
+>
+  <div
+    class="sc-gsTCUz iucpbX"
+  >
+    <h2
+      class="sc-dlfnbm krYNbM"
+    >
+      heading 1
+    </h2>
+    <h3
+      class="sc-hKgILt iYmoqs"
+    >
+      heading 2
+    </h3>
+    <a
+      class="sc-eCssSg khmktX"
+      href="/rdr2"
+    >
+      <span>
+        Buy now
+      </span>
+    </a>
+  </div>
+</section>
+`;
+
+exports[`Highlight should be able to render headings and button 1`] = `
+<section
+  class="sc-bdfBwQ ftmBaq"
+>
+  <div
+    class="sc-gsTCUz iucpbX"
+  >
+    <h2
+      class="sc-dlfnbm krYNbM"
+    >
+      heading 1
+    </h2>
+    <h3
+      class="sc-hKgILt iYmoqs"
+    >
+      heading 2
+    </h3>
+    <a
+      class="sc-eCssSg khmktX"
+      href="/rdr2"
+    >
+      <span>
+        Buy now
+      </span>
+    </a>
+  </div>
+</section>
+`;

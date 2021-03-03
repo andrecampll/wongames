@@ -1,10 +1,11 @@
-import { Wrapper, Title, Subtitle } from './styles';
+import { Wrapper, Title, Subtitle, Content } from './styles';
 
 import Button from '../Button';
 
 export type HighlightProps = {
   title: string;
   subtitle: string;
+  backgroundImage: string;
   buttonLabel: string;
   buttonLink: string;
 };
@@ -14,14 +15,17 @@ const Highlight = ({
   subtitle,
   buttonLabel,
   buttonLink,
+  backgroundImage,
 }: HighlightProps) => (
-  <Wrapper>
-    <Title>{title}</Title>
-    <Subtitle>{subtitle}</Subtitle>
+  <Wrapper backgroundImage={backgroundImage}>
+    <Content>
+      <Title>{title}</Title>
+      <Subtitle>{subtitle}</Subtitle>
 
-    <Button as="a" href={buttonLink}>
-      {buttonLabel}
-    </Button>
+      <Button as="a" href={buttonLink}>
+        {buttonLabel}
+      </Button>
+    </Content>
   </Wrapper>
 );
 
