@@ -3,6 +3,10 @@ import Highlight from '../../../components/Highlight';
 
 import { renderWithTheme } from '../../../utils/tests/helpers';
 
+import * as Styles from '../../../components/Highlight/styles';
+
+import 'jest-styled-components';
+
 const props = {
   title: 'heading 1',
   subtitle: 'heading 2',
@@ -55,5 +59,33 @@ describe('Highlight', () => {
         name: props.title,
       }),
     ).toHaveAttribute('src', '/float-image.png');
+  });
+
+  it('should be able to render align right by default', () => {
+    const { container } = renderWithTheme(<Highlight {...props} />);
+
+    expect(container.firstChild).toHaveStyleRule(
+      'grid-template-areas',
+      "'floatimage content'",
+    );
+
+    expect(container.firstChild).toHaveStyleRule('text-align', 'right', {
+      modifier: `${Styles.Content}`,
+    });
+  });
+
+  it('should be able to render align left', () => {
+    const { container } = renderWithTheme(
+      <Highlight {...props} alignment="left" />,
+    );
+
+    expect(container.firstChild).toHaveStyleRule(
+      'grid-template-areas',
+      "'content floatimage'",
+    );
+
+    expect(container.firstChild).toHaveStyleRule('text-align', 'left', {
+      modifier: `${Styles.Content}`,
+    });
   });
 });

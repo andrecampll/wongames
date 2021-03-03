@@ -1,29 +1,144 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Highlight should be able to render background image 1`] = `
+.c0 {
+  position: relative;
+  height: 23rem;
+  background-image: url(/img/red-dead-img.jpg);
+  background-position: center center;
+  background-size: cover;
+  display: grid;
+  grid-template-areas: 'floatimage content';
+  grid-template-columns: 1.3fr 2fr;
+}
+
+.c0::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.c0 .c2 {
+  text-align: right;
+}
+
+.c1 {
+  grid-area: floatimage;
+  z-index: 10;
+  max-height: 23rem;
+  max-width: 100%;
+  -webkit-align-self: end;
+  -ms-flex-item-align: end;
+  align-self: end;
+}
+
+.c3 {
+  grid-area: content;
+  z-index: 10;
+  padding: 1.6rem;
+}
+
+.c4 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #FAFAFA;
+}
+
+.c5 {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #FAFAFA;
+  margin-bottom: 3.2rem;
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: linear-gradient(180deg,#ff5f5f 0%,#f062c0 50%);
+  color: #FAFAFA;
+  border: 0;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  padding: 0.8rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  height: 4rem;
+  font-size: 1.4rem;
+  padding: 0.8rem 3.2rem;
+}
+
+.c6:hover {
+  background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
+}
+
+@media (min-width:768px) {
+  .c0 {
+    height: 32rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    max-height: 32rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    -webkit-align-self: end;
+    -ms-flex-item-align: end;
+    align-self: end;
+    padding: 4.0rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c4 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c5 {
+    font-size: 1.8rem;
+  }
+}
+
 <section
-  class="sc-bdfBwQ cGYIoj"
+  class="c0"
 >
   <img
     alt="heading 1"
-    class="sc-gsTCUz egLOHZ"
+    class="c1"
     src="/float-image.png"
   />
   <div
-    class="sc-dlfnbm kXoxNa"
+    class="c2 c3"
   >
     <h2
-      class="sc-hKgILt llWGmG"
+      class="c4"
     >
       heading 1
     </h2>
     <h3
-      class="sc-eCssSg hgfixj"
+      class="c5"
     >
       heading 2
     </h3>
     <a
-      class="sc-jSgupP fQOmRy"
+      class="c6"
       href="/rdr2"
     >
       <span>
@@ -35,29 +150,144 @@ exports[`Highlight should be able to render background image 1`] = `
 `;
 
 exports[`Highlight should be able to render headings and button 1`] = `
+.c0 {
+  position: relative;
+  height: 23rem;
+  background-image: url(/img/red-dead-img.jpg);
+  background-position: center center;
+  background-size: cover;
+  display: grid;
+  grid-template-areas: 'floatimage content';
+  grid-template-columns: 1.3fr 2fr;
+}
+
+.c0::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.c0 .c2 {
+  text-align: right;
+}
+
+.c1 {
+  grid-area: floatimage;
+  z-index: 10;
+  max-height: 23rem;
+  max-width: 100%;
+  -webkit-align-self: end;
+  -ms-flex-item-align: end;
+  align-self: end;
+}
+
+.c3 {
+  grid-area: content;
+  z-index: 10;
+  padding: 1.6rem;
+}
+
+.c4 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #FAFAFA;
+}
+
+.c5 {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #FAFAFA;
+  margin-bottom: 3.2rem;
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: linear-gradient(180deg,#ff5f5f 0%,#f062c0 50%);
+  color: #FAFAFA;
+  border: 0;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  padding: 0.8rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  height: 4rem;
+  font-size: 1.4rem;
+  padding: 0.8rem 3.2rem;
+}
+
+.c6:hover {
+  background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
+}
+
+@media (min-width:768px) {
+  .c0 {
+    height: 32rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    max-height: 32rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    -webkit-align-self: end;
+    -ms-flex-item-align: end;
+    align-self: end;
+    padding: 4.0rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c4 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c5 {
+    font-size: 1.8rem;
+  }
+}
+
 <section
-  class="sc-bdfBwQ cGYIoj"
+  class="c0"
 >
   <img
     alt="heading 1"
-    class="sc-gsTCUz egLOHZ"
+    class="c1"
     src="/float-image.png"
   />
   <div
-    class="sc-dlfnbm kXoxNa"
+    class="c2 c3"
   >
     <h2
-      class="sc-hKgILt llWGmG"
+      class="c4"
     >
       heading 1
     </h2>
     <h3
-      class="sc-eCssSg hgfixj"
+      class="c5"
     >
       heading 2
     </h3>
     <a
-      class="sc-jSgupP fQOmRy"
+      class="c6"
       href="/rdr2"
     >
       <span>
