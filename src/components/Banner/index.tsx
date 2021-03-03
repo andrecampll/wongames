@@ -1,4 +1,5 @@
 import Button from '../Button';
+import Ribbon, { RibbonColors, RibbonSizes } from '../Ribbon';
 import { Wrapper, Image, Caption, Subtitle, Title } from './styles';
 
 export type BannerProps = {
@@ -7,6 +8,9 @@ export type BannerProps = {
   subtitle: string;
   buttonLabel: string;
   buttonLink: string;
+  ribbon?: string;
+  ribbonSize?: RibbonSizes;
+  ribbonColor?: RibbonColors;
 };
 
 const Banner = ({
@@ -15,8 +19,16 @@ const Banner = ({
   subtitle,
   buttonLabel,
   buttonLink,
+  ribbon,
+  ribbonSize = 'normal',
+  ribbonColor = 'primary',
 }: BannerProps) => (
   <Wrapper>
+    {!!ribbon && (
+      <Ribbon color={ribbonColor} size={ribbonSize}>
+        {ribbon}
+      </Ribbon>
+    )}
     <Image src={image} role="img" aria-label={title} />
 
     <Caption>
