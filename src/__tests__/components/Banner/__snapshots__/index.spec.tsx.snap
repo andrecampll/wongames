@@ -68,6 +68,16 @@ exports[`Banner should be able to render correctly 1`] = `
   font-weight: 600;
 }
 
+@media (max-width:1170px) {
+  .c0 .sc-gsTCUz {
+    right: 0;
+  }
+
+  .c0 .sc-gsTCUz::before {
+    display: none;
+  }
+}
+
 @media (min-width:768px) {
   .c0 {
     box-shadow: 0 0.4rem 0.5rem 0 rgba(0,0,0,0.2);
