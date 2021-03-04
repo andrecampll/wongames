@@ -9,6 +9,7 @@ export default {
     developer: 'Rockstar Games',
     image: 'https://source.unsplash.com/user/willianjusten/300x140',
     price: 'R$ 235,00',
+    promotionalPrice: 'R$ 100,00',
   },
 } as Meta;
 
