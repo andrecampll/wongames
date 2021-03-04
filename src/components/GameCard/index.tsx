@@ -11,6 +11,7 @@ import {
   FavButton,
   Price,
   BuyBox,
+  Content,
 } from './styles';
 import Button from '../Button';
 
@@ -19,24 +20,34 @@ export type GameCardProps = {
   developer: string;
   image: string;
   price: string;
+  promotionalPrice?: string;
 };
 
-const GameCard = ({ title, developer, image, price }: GameCardProps) => (
+const GameCard = ({
+  title,
+  developer,
+  image,
+  price,
+  promotionalPrice,
+}: GameCardProps) => (
   <Wrapper>
     <ImageBox>
       <img src={image} alt={title} />
     </ImageBox>
-    <Info>
-      <Title>{title}</Title>
-      <Developer>{developer}</Developer>
-    </Info>
-    <FavButton role="button">
-      <FavoriteBorder aria-label="Add to Wishlist" />
-    </FavButton>
-    <BuyBox>
-      <Price>{price}</Price>
-      <Button icon={<AddShoppingCart />} size="small" />
-    </BuyBox>
+    <Content>
+      <Info>
+        <Title>{title}</Title>
+        <Developer>{developer}</Developer>
+      </Info>
+      <FavButton role="button">
+        <FavoriteBorder aria-label="Add to Wishlist" />
+      </FavButton>
+      <BuyBox>
+        {!!promotionalPrice && <Price isPromotional>{price}</Price>}
+        <Price>{promotionalPrice || price}</Price>
+        <Button icon={<AddShoppingCart />} size="small" />
+      </BuyBox>
+    </Content>
   </Wrapper>
 );
 
