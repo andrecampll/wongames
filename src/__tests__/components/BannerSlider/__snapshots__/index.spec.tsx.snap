@@ -1,11 +1,295 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BannerSlider should be able to render 1`] = `
+exports[`BannerSlider should be able to render vertical slider 1`] = `
 <div
-  class="sc-bdfBwQ"
+  class="sc-fubCfw"
 >
-  <h1>
-    BannerSlider
-  </h1>
+  <section
+    class="sc-bdfBwQ iqTTGR"
+  >
+    <div
+      class="slick-slider slick-vertical slick-initialized"
+      dir="ltr"
+    >
+      <div
+        class="slick-list"
+        style="height: 0px;"
+      >
+        <div
+          class="slick-track"
+          style="opacity: 1; transform: translate3d(0px, 0px, 0px);"
+        >
+          <div
+            aria-hidden="false"
+            class="slick-slide slick-active slick-current"
+            data-index="0"
+            style="outline: none; width: 0px;"
+            tabindex="-1"
+          >
+            <div>
+              <div
+                class="sc-hKgILt hNAidq"
+              >
+                <div
+                  class="sc-dlfnbm cnqZPj"
+                  color="primary"
+                >
+                  Bestselling
+                </div>
+                <div
+                  aria-label="Defy death 1"
+                  class="sc-eCssSg idfjjV"
+                  role="img"
+                  src="https://source.unsplash.com/user/willianjusten/1042x580"
+                />
+                <div
+                  class="sc-jSgupP bdRVCZ"
+                >
+                  <h2
+                    class="sc-gKsewC fZqpCl"
+                  >
+                    Defy death 1
+                  </h2>
+                  <h3
+                    class="sc-iBPRYJ ermzdX"
+                  >
+                    <p>
+                      Play the new 
+                      <strong>
+                        CrashLands
+                      </strong>
+                       season
+                    </p>
+                  </h3>
+                  <a
+                    class="sc-gsTCUz DakFX"
+                    href="/games/defy-death"
+                  >
+                    <span>
+                      Buy now
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            class="slick-slide"
+            data-index="1"
+            style="outline: none; width: 0px;"
+            tabindex="-1"
+          >
+            <div>
+              <div
+                class="sc-hKgILt hNAidq"
+              >
+                <div
+                  aria-label="Defy death 2"
+                  class="sc-eCssSg hfjqkj"
+                  role="img"
+                  src="https://source.unsplash.com/user/willianjusten/1042x582"
+                />
+                <div
+                  class="sc-jSgupP bdRVCZ"
+                >
+                  <h2
+                    class="sc-gKsewC fZqpCl"
+                  >
+                    Defy death 2
+                  </h2>
+                  <h3
+                    class="sc-iBPRYJ ermzdX"
+                  >
+                    <p>
+                      Play the new 
+                      <strong>
+                        CrashLands
+                      </strong>
+                       season
+                    </p>
+                  </h3>
+                  <a
+                    class="sc-gsTCUz DakFX"
+                    href="/games/defy-death"
+                  >
+                    <span>
+                      Buy now
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul
+        class="slick-dots"
+        style="display: block;"
+      >
+        <li
+          class="slick-active"
+        >
+          <button>
+            1
+          </button>
+        </li>
+        <li
+          class=""
+        >
+          <button>
+            2
+          </button>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`BannerSlider should be able to render with 1 active item 1`] = `
+<div
+  class="sc-fubCfw"
+>
+  <section
+    class="sc-bdfBwQ iqTTGR"
+  >
+    <div
+      class="slick-slider slick-vertical slick-initialized"
+      dir="ltr"
+    >
+      <div
+        class="slick-list"
+        style="height: 0px;"
+      >
+        <div
+          class="slick-track"
+          style="opacity: 1; transform: translate3d(0px, 0px, 0px);"
+        >
+          <div
+            aria-hidden="false"
+            class="slick-slide slick-active slick-current"
+            data-index="0"
+            style="outline: none; width: 0px;"
+            tabindex="-1"
+          >
+            <div>
+              <div
+                class="sc-hKgILt hNAidq"
+              >
+                <div
+                  class="sc-dlfnbm cnqZPj"
+                  color="primary"
+                >
+                  Bestselling
+                </div>
+                <div
+                  aria-label="Defy death 1"
+                  class="sc-eCssSg idfjjV"
+                  role="img"
+                  src="https://source.unsplash.com/user/willianjusten/1042x580"
+                />
+                <div
+                  class="sc-jSgupP bdRVCZ"
+                >
+                  <h2
+                    class="sc-gKsewC fZqpCl"
+                  >
+                    Defy death 1
+                  </h2>
+                  <h3
+                    class="sc-iBPRYJ ermzdX"
+                  >
+                    <p>
+                      Play the new 
+                      <strong>
+                        CrashLands
+                      </strong>
+                       season
+                    </p>
+                  </h3>
+                  <a
+                    class="sc-gsTCUz DakFX"
+                    href="/games/defy-death"
+                  >
+                    <span>
+                      Buy now
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            class="slick-slide"
+            data-index="1"
+            style="outline: none; width: 0px;"
+            tabindex="-1"
+          >
+            <div>
+              <div
+                class="sc-hKgILt hNAidq"
+              >
+                <div
+                  aria-label="Defy death 2"
+                  class="sc-eCssSg hfjqkj"
+                  role="img"
+                  src="https://source.unsplash.com/user/willianjusten/1042x582"
+                />
+                <div
+                  class="sc-jSgupP bdRVCZ"
+                >
+                  <h2
+                    class="sc-gKsewC fZqpCl"
+                  >
+                    Defy death 2
+                  </h2>
+                  <h3
+                    class="sc-iBPRYJ ermzdX"
+                  >
+                    <p>
+                      Play the new 
+                      <strong>
+                        CrashLands
+                      </strong>
+                       season
+                    </p>
+                  </h3>
+                  <a
+                    class="sc-gsTCUz DakFX"
+                    href="/games/defy-death"
+                  >
+                    <span>
+                      Buy now
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul
+        class="slick-dots"
+        style="display: block;"
+      >
+        <li
+          class="slick-active"
+        >
+          <button>
+            1
+          </button>
+        </li>
+        <li
+          class=""
+        >
+          <button>
+            2
+          </button>
+        </li>
+      </ul>
+    </div>
+  </section>
 </div>
 `;
