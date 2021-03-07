@@ -5,6 +5,7 @@ This repository refers to a awesome game store made with React 🚀 <br />
   <img src="./.github/logo.png" />
 </p>
 
+
 # Proposal 🔥
 
 <p align="center" t>
