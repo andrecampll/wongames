@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BannerSlider should be able to render 1`] = `
+<div
+  class="sc-bdfBwQ"
+>
+  <h1>
+    BannerSlider
+  </h1>
+</div>
+`;
