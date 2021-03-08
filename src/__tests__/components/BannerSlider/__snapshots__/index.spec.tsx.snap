@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BannerSlider should be able to render vertical slider 1`] = `
-<div
-  class="sc-fubCfw"
+<section
+  class="sc-fubCfw gURrpr"
 >
   <section
     class="sc-bdfBwQ iqTTGR"
@@ -144,12 +144,12 @@ exports[`BannerSlider should be able to render vertical slider 1`] = `
       </ul>
     </div>
   </section>
-</div>
+</section>
 `;
 
 exports[`BannerSlider should be able to render with 1 active item 1`] = `
-<div
-  class="sc-fubCfw"
+<section
+  class="sc-fubCfw gURrpr"
 >
   <section
     class="sc-bdfBwQ iqTTGR"
@@ -291,5 +291,5 @@ exports[`BannerSlider should be able to render with 1 active item 1`] = `
       </ul>
     </div>
   </section>
-</div>
+</section>
 `;
