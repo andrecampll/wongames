@@ -59,7 +59,8 @@
     "no-plusplus": "off",
     "no-param-reassign": "off",
     "react/jsx-curly-newline": "off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "react/no-array-index-key": "off"
   },
   "settings": {
     "import/resolver": {
