@@ -47,4 +47,10 @@ describe('BannerSlider', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  it('should be able to render vertical slider', () => {
+    const { container } = renderWithTheme(<BannerSlider items={items} />);
+
+    expect(container.querySelector('.slick-dots')).toBeInTheDocument();
+  });
 });
