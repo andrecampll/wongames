@@ -1,7 +1,19 @@
-import { createGlobalStyle, css } from 'styled-components';
+import {
+  createGlobalStyle,
+  css,
+  GlobalStyleComponent,
+  DefaultTheme,
+} from 'styled-components';
 
-export default createGlobalStyle`
-  ${({ theme }) => css`
+type GlobalStylesProps = {
+  removeBg?: boolean;
+};
+
+const GlobalStyles: GlobalStyleComponent<
+  GlobalStylesProps,
+  DefaultTheme
+> = createGlobalStyle`
+  ${({ theme, removeBg }) => css`
     @font-face {
       font-family: 'Poppins';
       font-style: normal;
@@ -34,15 +46,21 @@ export default createGlobalStyle`
       outline: 0;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+
+      &::before,
+      &::after {
+        box-sizing: inherit;
+      }
     }
 
     body {
-      background: ${theme.colors.mainBg};
       font-size: ${theme.font.sizes.medium};
+      font-family: ${theme.font.family};
 
-      h1 {
-        color: #fff;
-      }
+      ${!removeBg &&
+      css`
+        background-color: ${theme.colors.mainBg};
+      `}
     }
 
     body,
@@ -61,3 +79,5 @@ export default createGlobalStyle`
     }
   `}
 `;
+
+export default GlobalStyles;
