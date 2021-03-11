@@ -10,7 +10,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
       <Head>
         <link rel="manifest" href="/manifest.json" />
-        <title>WonGames</title>
+        <title>Won Games</title>
+
+        <meta name="description" content="The best Game Stores in the world!" />
       </Head>
 
       <GlobalStyles />
