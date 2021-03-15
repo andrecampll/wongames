@@ -13,7 +13,11 @@
     "build-storybook": "build-storybook -s ./public",
     "generate": "yarn plop --plopfile ./generators/plopfile.js"
   },
-
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "src/**/*": [
       "yarn lint --fix",

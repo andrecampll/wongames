@@ -6,10 +6,17 @@ import GameCardSlider from '../../components/GameCardSlider';
 import Highlight, { HighlightProps } from '../../components/Highlight';
 
 import { Container } from '../../components/Container';
-import { Wrapper } from './styles';
-
 import { BannerProps } from '../../components/Banner';
 import { GameCardProps } from '../../components/GameCard';
+
+import {
+  SectionBanner,
+  SectionNews,
+  SectionFooter,
+  SectionMostPopular,
+  SectionUpcoming,
+  SectionFreeGames,
+} from './styles';
 
 export type HomeTemplateProps = {
   banners: BannerProps[];
@@ -34,52 +41,59 @@ const Home = ({
   freeGames,
   freeHighlight,
 }: HomeTemplateProps) => (
-  <Wrapper>
+  <section>
     <Container>
       <Menu />
-      <BannerSlider items={banners} />
+
+      <SectionBanner>
+        <BannerSlider items={banners} />
+      </SectionBanner>
     </Container>
 
-    <Container>
-      <Heading lineLeft lineColor="secondary" color="black">
-        News
-      </Heading>
+    <SectionNews>
+      <Container>
+        <Heading lineLeft lineColor="secondary" color="black">
+          News
+        </Heading>
 
-      <GameCardSlider items={newGames} color="black" />
-    </Container>
+        <GameCardSlider items={newGames} color="black" />
+      </Container>
+    </SectionNews>
 
-    <Container>
+    <SectionMostPopular>
       <Heading lineLeft lineColor="secondary">
         Most Popular
       </Heading>
 
       <Highlight {...mostPopularHighlight} />
       <GameCardSlider items={mostPopularGames} />
-    </Container>
+    </SectionMostPopular>
 
-    <Container>
+    <SectionUpcoming>
       <Heading lineLeft lineColor="secondary">
-        Upcoming
+        Upcomming
       </Heading>
 
       <GameCardSlider items={upcommingGames} />
       <Highlight {...upcommingHighlight} />
       <GameCardSlider items={upcommingMoreGames} />
-    </Container>
+    </SectionUpcoming>
 
-    <Container>
+    <SectionFreeGames>
       <Heading lineLeft lineColor="secondary">
         Free Games
       </Heading>
 
       <Highlight {...freeHighlight} />
       <GameCardSlider items={freeGames} />
-    </Container>
+    </SectionFreeGames>
 
-    <Container>
-      <Footer />
-    </Container>
-  </Wrapper>
+    <SectionFooter>
+      <Container>
+        <Footer />
+      </Container>
+    </SectionFooter>
+  </section>
 );
 
 export default Home;
