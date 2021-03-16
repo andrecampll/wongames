@@ -56,37 +56,39 @@ const Home = ({
           News
         </Heading>
 
-        <GameCardSlider items={newGames} color="black" />
+        <GameCardSlider items={newGames} />
       </Container>
     </SectionNews>
 
-    <SectionMostPopular>
-      <Heading lineLeft lineColor="secondary">
-        Most Popular
-      </Heading>
+    <Container>
+      <SectionMostPopular>
+        <Heading lineLeft lineColor="secondary">
+          Most Popular
+        </Heading>
 
-      <Highlight {...mostPopularHighlight} />
-      <GameCardSlider items={mostPopularGames} />
-    </SectionMostPopular>
+        <Highlight {...mostPopularHighlight} />
+        <GameCardSlider items={mostPopularGames} color="white" />
+      </SectionMostPopular>
 
-    <SectionUpcoming>
-      <Heading lineLeft lineColor="secondary">
-        Upcomming
-      </Heading>
+      <SectionUpcoming>
+        <Heading lineLeft lineColor="secondary">
+          Upcomming
+        </Heading>
 
-      <GameCardSlider items={upcommingGames} />
-      <Highlight {...upcommingHighlight} />
-      <GameCardSlider items={upcommingMoreGames} />
-    </SectionUpcoming>
+        <GameCardSlider items={upcommingGames} color="white" />
+        <Highlight {...upcommingHighlight} />
+        <GameCardSlider items={upcommingMoreGames} color="white" />
+      </SectionUpcoming>
 
-    <SectionFreeGames>
-      <Heading lineLeft lineColor="secondary">
-        Free Games
-      </Heading>
+      <SectionFreeGames>
+        <Heading lineLeft lineColor="secondary">
+          Free Games
+        </Heading>
 
-      <Highlight {...freeHighlight} />
-      <GameCardSlider items={freeGames} />
-    </SectionFreeGames>
+        <Highlight {...freeHighlight} />
+        <GameCardSlider items={freeGames} color="white" />
+      </SectionFreeGames>
+    </Container>
 
     <SectionFooter>
       <Container>
