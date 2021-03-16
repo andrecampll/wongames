@@ -47,4 +47,4 @@ export default {
     modal: 40,
     alwaysOnTop: 50,
   },
-};
+} as const;
