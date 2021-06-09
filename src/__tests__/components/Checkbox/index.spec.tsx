@@ -51,7 +51,7 @@ describe('Checkbox', () => {
     expect(onCheck).toHaveBeenCalledWith(true);
   });
 
-  it('should be able to dispatch onCheck when status changes', async () => {
+  it('should be able to dispatch onCheck with status', async () => {
     const onCheck = jest.fn();
 
     renderWithTheme(
@@ -71,5 +71,15 @@ describe('Checkbox', () => {
     });
 
     expect(onCheck).toHaveBeenCalledWith(false);
+  });
+
+  it('should be able to focus in Checkbox', async () => {
+    renderWithTheme(<Checkbox label="checkbox label" labelFor="check" />);
+
+    expect(document.body).toHaveFocus();
+
+    userEvent.tab();
+
+    expect(screen.getByLabelText(/checkbox/i)).toHaveFocus();
   });
 });
