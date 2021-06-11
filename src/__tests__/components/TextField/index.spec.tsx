@@ -1,5 +1,6 @@
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { Email } from '@styled-icons/material-outlined/Email';
 import { renderWithTheme } from '../../../utils/tests/helpers';
 
 import TextField from '../../../components/TextField';
@@ -55,5 +56,19 @@ describe('<TextField />', () => {
 
     userEvent.tab();
     expect(input).toHaveFocus();
+  });
+
+  it('Should be able to render with Icon', () => {
+    renderWithTheme(
+      <TextField
+        icon={<Email data-testid="icon" />}
+        label="TextField"
+        labelFor="TextField"
+        id="TextField"
+      />,
+    );
+
+    expect(screen.getByRole('textbox')).toBeInTheDocument();
+    expect(screen.getByTestId('icon')).toBeInTheDocument();
   });
 });
