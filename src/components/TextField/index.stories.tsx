@@ -24,7 +24,7 @@ export const Default: Story<TextFieldProps> = args => (
   </div>
 );
 
-export const WithIcon: Story = args => (
+export const WithIcon: Story<TextFieldProps> = args => (
   <div style={{ maxWidth: 300, padding: 15 }}>
     <TextField {...args} />
   </div>
@@ -32,4 +32,15 @@ export const WithIcon: Story = args => (
 
 WithIcon.args = {
   icon: <Email />,
+};
+
+export const WithRightIcon: Story<TextFieldProps> = args => (
+  <div style={{ maxWidth: 300, padding: 15 }}>
+    <TextField {...args} />
+  </div>
+);
+
+WithRightIcon.args = {
+  icon: <Email />,
+  iconPosition: 'right',
 };
