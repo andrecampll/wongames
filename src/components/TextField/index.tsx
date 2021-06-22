@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 import { useState, InputHTMLAttributes } from 'react';
 
-import { Wrapper, Label, InputWrapper, Input, Icon } from './styles';
+import { Wrapper, Label, InputWrapper, Input, Icon, Error } from './styles';
 
 export type TextFieldProps = {
   onInput?: (value: string) => void;
@@ -11,6 +11,7 @@ export type TextFieldProps = {
   icon?: JSX.Element;
   iconPosition?: 'left' | 'right';
   disabled?: boolean;
+  error?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 const TextField = ({
@@ -21,6 +22,7 @@ const TextField = ({
   onInput,
   icon,
   disabled = false,
+  error,
   ...props
 }: TextFieldProps) => {
   const [value, setValue] = useState(initialValue);
@@ -33,7 +35,7 @@ const TextField = ({
   };
 
   return (
-    <Wrapper disabled={disabled}>
+    <Wrapper disabled={disabled} error={!!error}>
       {!!label && <Label htmlFor={labelFor}>{label}</Label>}
       <InputWrapper>
         {!!icon && <Icon iconPosition={iconPosition}>{icon}</Icon>}
@@ -46,6 +48,7 @@ const TextField = ({
           {...props}
         />
       </InputWrapper>
+      {!!error && <Error>{error}</Error>}
     </Wrapper>
   );
 };
