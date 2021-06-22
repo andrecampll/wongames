@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextField /> Renders with error 1`] = `
+<div
+  class="sc-jSgupP ivdMjb"
+>
+  <label
+    class="sc-dlfnbm jsUlVz"
+    for="TextField"
+  >
+    TextField
+  </label>
+  <div
+    class="sc-bdfBwQ OPvhY"
+  >
+    <div
+      class="sc-hKgILt Ddcon"
+    >
+      <svg
+        aria-hidden="true"
+        class="StyledIconBase-ea9ulj-0 cKCFNq"
+        data-testid="icon"
+        fill="currentColor"
+        focusable="false"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0V0z"
+          fill="none"
+        />
+        <path
+          d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"
+        />
+      </svg>
+    </div>
+    <input
+      class="sc-gsTCUz mKjgu"
+      type="text"
+      value=""
+    />
+  </div>
+  <p
+    class="sc-eCssSg cSwHNC"
+  >
+    Error message
+  </p>
+</div>
+`;

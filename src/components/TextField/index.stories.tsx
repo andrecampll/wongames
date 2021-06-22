@@ -34,13 +34,13 @@ WithIcon.args = {
   icon: <Email />,
 };
 
-export const WithRightIcon: Story<TextFieldProps> = args => (
+export const WithError: Story<TextFieldProps> = args => (
   <div style={{ maxWidth: 300, padding: 15 }}>
     <TextField {...args} />
   </div>
 );
 
-WithRightIcon.args = {
+WithError.args = {
+  error: 'Ops... something is wrong',
   icon: <Email />,
-  iconPosition: 'right',
 };
