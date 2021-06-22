@@ -1,12 +1,12 @@
-import styled, { css } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
+
 import { TextFieldProps } from '.';
 
 type IconPositionProps = Pick<TextFieldProps, 'iconPosition'>;
 
-export const InputWrapper = styled.div<IconPositionProps>`
-  ${({ theme, iconPosition }) => css`
+export const InputWrapper = styled.div`
+  ${({ theme }) => css`
     display: flex;
-    flex-direction: ${iconPosition === 'right' ? 'row-reverse' : 'row'};
     background: ${theme.colors.lightGray};
     border-radius: 0.2rem;
     padding: 0 ${theme.spacings.xsmall};
@@ -43,14 +43,32 @@ export const Label = styled.label`
 export const Icon = styled.div<IconPositionProps>`
   ${({ theme, iconPosition }) => css`
     display: flex;
-    width: 2rem;
+    width: 2.2rem;
     color: ${theme.colors.gray};
     order: ${iconPosition === 'right' ? 1 : 0};
-
     & > svg {
       width: 100%;
     }
   `}
 `;
 
-export const Wrapper = styled.div``;
+const wrapperModifiers = {
+  disabled: (theme: DefaultTheme) => css`
+    ${Label},
+    ${Input},
+    ${Icon} {
+      cursor: not-allowed;
+      color: ${theme.colors.gray};
+
+      &::placeholder {
+        color: currentColor;
+      }
+    }
+  `,
+};
+
+export const Wrapper = styled.div<Pick<TextFieldProps, 'disabled'>>`
+  ${({ theme, disabled }) => css`
+    ${disabled && wrapperModifiers.disabled(theme)};
+  `}
+`;
