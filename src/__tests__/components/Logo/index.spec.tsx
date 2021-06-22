@@ -5,6 +5,12 @@ import 'jest-styled-components';
 import { renderWithTheme } from '../../../utils/tests/helpers';
 
 describe('Logo', () => {
+  it('should render the logo with id passed', () => {
+    const { container } = renderWithTheme(<Logo id="myId" />);
+
+    expect(container.querySelector('#paint0_linear_myId')).toBeInTheDocument();
+  });
+
   it('should be able to render a white label by default', () => {
     renderWithTheme(<Logo />);
 
