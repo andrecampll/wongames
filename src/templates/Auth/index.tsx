@@ -1,6 +1,14 @@
 import Heading from '../../components/Heading';
 import Logo from '../../components/Logo';
-import { Wrapper, BannerBlock, Subtitle, Footer, Content } from './styles';
+import {
+  Wrapper,
+  BannerBlock,
+  Subtitle,
+  Footer,
+  Content,
+  BannerContent,
+  ContentWrapper,
+} from './styles';
 
 type AuthProps = {
   title: string;
@@ -10,23 +18,29 @@ type AuthProps = {
 const Auth = ({ title, children }: AuthProps) => (
   <Wrapper>
     <BannerBlock>
-      <Logo />
+      <BannerContent>
+        <Logo />
 
-      <Heading>All your favorite games in one place</Heading>
-      <Subtitle>
-        <strong>WON</strong> is the best and most complete gaming platform
-      </Subtitle>
+        <div>
+          <Heading>All your favorite games in one place</Heading>
+          <Subtitle>
+            <strong>WON</strong> is the best and most complete gaming platform
+          </Subtitle>
+        </div>
 
-      <Footer>Won Games 2020 - Todos os Direitos</Footer>
+        <Footer>Won Games 2020 - Todos os Direitos</Footer>
+      </BannerContent>
     </BannerBlock>
 
     <Content>
-      <Logo color="black" size="large" />
-      <Heading color="black" lineColor="secondary" lineLeft>
-        {title}
-      </Heading>
+      <ContentWrapper>
+        <Logo color="black" size="large" />
+        <Heading color="black" lineColor="secondary" lineLeft>
+          {title}
+        </Heading>
 
-      {children}
+        {children}
+      </ContentWrapper>
     </Content>
   </Wrapper>
 );
