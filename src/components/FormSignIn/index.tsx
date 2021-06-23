@@ -19,9 +19,8 @@ const FormSignIn = () => (
         type="password"
         icon={<Lock />}
       />
-      <ForgotPassword href="#">
-        <a>Forgot your password?</a>
-      </ForgotPassword>
+
+      <ForgotPassword href="#">Forgot your password?</ForgotPassword>
 
       <Button size="large" fullWidth>
         Sign in now
