@@ -1,5 +1,5 @@
-import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
-import { Wrapper } from './styles';
+import { forwardRef, AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
+import { Wrapper, WrapperProps } from './styles';
 
 type ButtonTypes =
   | AnchorHTMLAttributes<HTMLAnchorElement>
@@ -13,19 +13,23 @@ export type ButtonProps = {
   minimal?: boolean;
 } & ButtonTypes;
 
-const Button = ({
-  children,
-  size = 'medium',
-  fullWidth = false,
-  icon,
-  minimal = false,
-  ...props
-}: ButtonProps) => (
+const Button: React.ForwardRefRenderFunction<WrapperProps, ButtonProps> = (
+  {
+    children,
+    size = 'medium',
+    fullWidth = false,
+    icon,
+    minimal = false,
+    ...props
+  },
+  ref,
+) => (
   <Wrapper
     size={size}
     fullWidth={fullWidth}
     hasIcon={!!icon}
     minimal={minimal}
+    ref={ref}
     {...props}
   >
     {icon}
@@ -33,4 +37,4 @@ const Button = ({
   </Wrapper>
 );
 
-export default Button;
+export default forwardRef(Button);
