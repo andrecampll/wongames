@@ -52,7 +52,7 @@ const Home = ({
 
     <SectionNews>
       <Container>
-        <Heading lineLeft lineColor="secondary" color="black">
+        <Heading lineLeft lineColor="secondary">
           News
         </Heading>
 

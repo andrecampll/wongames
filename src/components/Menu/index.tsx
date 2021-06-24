@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 
 import { Menu2 as MenuIcon } from '@styled-icons/remix-fill/Menu2';
 import { ShoppingCart as ShoppingCartIcon } from '@styled-icons/material-outlined/ShoppingCart';
@@ -59,7 +60,9 @@ const Menu = ({ username }: MenuProps) => {
 
         {!username && (
           <MediaMatch greaterThan="medium">
-            <Button>Sign in</Button>
+            <Link href="/sign-in" passHref>
+              <Button as="a">Sign in</Button>
+            </Link>
           </MediaMatch>
         )}
       </MenuGroup>
@@ -80,15 +83,17 @@ const Menu = ({ username }: MenuProps) => {
 
         {!username && (
           <RegisterBox>
-            <Button fullWidth size="large">
-              Log in now
-            </Button>
+            <Link href="/sign-in" passHref>
+              <Button fullWidth size="large" as="a">
+                Log in now
+              </Button>
+            </Link>
 
             <span>or</span>
 
-            <CreateAccount href="#" title="Sign Up">
-              Sign Up
-            </CreateAccount>
+            <Link href="/sign-up" passHref>
+              <CreateAccount title="Sign Up">Sign Up</CreateAccount>
+            </Link>
           </RegisterBox>
         )}
       </MenuFull>
