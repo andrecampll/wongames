@@ -4,10 +4,10 @@ import { AccountCircle, Email, Lock } from '@styled-icons/material-outlined';
 import Button from '../Button';
 import TextField from '../TextField';
 
-import { Wrapper, FormLink } from './styles';
+import { FormWrapper, FormLink } from '../Form';
 
 const FormSignUp = () => (
-  <Wrapper>
+  <FormWrapper>
     <form>
       <TextField
         name="name"
@@ -45,7 +45,7 @@ const FormSignUp = () => (
         </Link>
       </FormLink>
     </form>
-  </Wrapper>
+  </FormWrapper>
 );
 
 export default FormSignUp;

@@ -2,10 +2,11 @@ import { Email, Lock } from 'styled-icons/material-outlined';
 import Link from 'next/link';
 import Button from '../Button';
 import TextField from '../TextField';
-import { Wrapper, ForgotPassword, FormLink } from './styles';
+import { FormWrapper, FormLink } from '../Form';
+import { ForgotPassword } from './styles';
 
 const FormSignIn = () => (
-  <Wrapper>
+  <FormWrapper>
     <form>
       <TextField
         name="email"
@@ -33,7 +34,7 @@ const FormSignIn = () => (
         </Link>
       </FormLink>
     </form>
-  </Wrapper>
+  </FormWrapper>
 );
 
 export default FormSignIn;
