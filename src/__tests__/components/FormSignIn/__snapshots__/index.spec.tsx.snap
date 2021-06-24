@@ -83,7 +83,7 @@ exports[`FormSignIn should be able to render the Form 1`] = `
       </div>
     </div>
     <a
-      class="sc-fubCfw kiPSjH"
+      class="sc-pFZIQ hWaBtw"
       href="#"
     >
       Forgot your password?
@@ -96,7 +96,7 @@ exports[`FormSignIn should be able to render the Form 1`] = `
       </span>
     </button>
     <div
-      class="sc-pFZIQ bsPrjV"
+      class="sc-fubCfw dfAEFy"
     >
       Don't have an account?
        
