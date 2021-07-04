@@ -15,16 +15,22 @@ import {
 
 type Platform = 'windows' | 'linux' | 'mac';
 
+type Rating = 'BR0' | 'BR10' | 'BR12' | 'BR14' | 'BR16' | 'BR18';
+
 export type GameDetailsProps = {
   platforms: Platform[];
   developer: string;
   releaseDate: string;
+  rating: Rating;
+  genres: string[];
 };
 
 const GameDetails = ({
   platforms,
   developer,
   releaseDate,
+  rating,
+  genres,
 }: GameDetailsProps) => {
   const platformIcons = {
     linux: <Linux title="Linux" size={18} />,
@@ -73,12 +79,14 @@ const GameDetails = ({
 
         <Block>
           <Label>Rating</Label>
-          <Description>18+</Description>
+          <Description>
+            {rating === 'BR0' ? 'FREE' : `${rating.replace('BR', '')}+`}
+          </Description>
         </Block>
 
         <Block>
           <Label>Genres</Label>
-          <Description>Action / Adventure</Description>
+          <Description>{genres.join(' / ')}</Description>
         </Block>
       </Content>
     </Wrapper>
