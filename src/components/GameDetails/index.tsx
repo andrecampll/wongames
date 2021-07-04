@@ -1,46 +1,76 @@
+import { Apple, Windows, Linux } from '@styled-icons/fa-brands';
+
 import Heading from '../Heading';
 import MediaMatch from '../MediaMatch';
-import { Wrapper, Content, Label, Description, Block } from './styles';
 
-const GameDetails = () => (
-  <Wrapper>
-    <MediaMatch greaterThan="small">
-      <Heading lineLeft lineColor="secondary">
-        Game Details
-      </Heading>
-    </MediaMatch>
+import {
+  Wrapper,
+  Content,
+  Label,
+  Description,
+  Block,
+  Icon,
+  IconsWrapper,
+} from './styles';
 
-    <Content>
-      <Block>
-        <Label>Developer</Label>
-        <Description>Gearbox Software</Description>
-      </Block>
+type Platform = 'windows' | 'linux' | 'mac';
 
-      <Block>
-        <Label>Release Date</Label>
-        <Description>Nov 16, 2019</Description>
-      </Block>
+export type GameDetailsProps = {
+  platforms: Platform[];
+};
 
-      <Block>
-        <Label>Platforms</Label>
-      </Block>
+const GameDetails = ({ platforms }: GameDetailsProps) => {
+  const platformIcons = {
+    linux: <Linux title="Linux" size={18} />,
+    mac: <Apple title="Mac" size={18} />,
+    windows: <Windows title="Windows" size={18} />,
+  };
 
-      <Block>
-        <Label>Publisher</Label>
-        <Description>2K</Description>
-      </Block>
+  return (
+    <Wrapper>
+      <MediaMatch greaterThan="small">
+        <Heading lineLeft lineColor="secondary">
+          Game Details
+        </Heading>
+      </MediaMatch>
 
-      <Block>
-        <Label>Rating</Label>
-        <Description>18+</Description>
-      </Block>
+      <Content>
+        <Block>
+          <Label>Developer</Label>
+          <Description>Gearbox Software</Description>
+        </Block>
 
-      <Block>
-        <Label>Genres</Label>
-        <Description>Action / Adventure</Description>
-      </Block>
-    </Content>
-  </Wrapper>
-);
+        <Block>
+          <Label>Release Date</Label>
+          <Description>Nov 16, 2019</Description>
+        </Block>
+
+        <Block>
+          <Label>Platforms</Label>
+          <IconsWrapper>
+            {platforms.map((icon: Platform) => (
+              <Icon key={icon}>{platformIcons[icon]}</Icon>
+            ))}
+          </IconsWrapper>
+        </Block>
+
+        <Block>
+          <Label>Publisher</Label>
+          <Description>2K</Description>
+        </Block>
+
+        <Block>
+          <Label>Rating</Label>
+          <Description>18+</Description>
+        </Block>
+
+        <Block>
+          <Label>Genres</Label>
+          <Description>Action / Adventure</Description>
+        </Block>
+      </Content>
+    </Wrapper>
+  );
+};
 
 export default GameDetails;
