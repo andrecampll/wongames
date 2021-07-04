@@ -11,8 +11,8 @@ export default {
   },
 } as Meta;
 
-export const Basic: Story = () => (
+export const Basic: Story = args => (
   <div style={{ maxWidth: '130rem', margin: '0 auto' }}>
-    <GameDetails />
+    <GameDetails {...args} platforms={['windows', 'linux', 'mac']} />
   </div>
 );

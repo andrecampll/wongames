@@ -34,7 +34,9 @@
     "react-icons": "^4.1.0",
     "react-slick": "^0.28.0",
     "styled-components": "^5.2.1",
-    "styled-icons": "^10.28.0",
+    "@styled-icons/fa-brands": "^10.28.0",
+    "@styled-icons/material-outlined": "^10.28.0",
+    "@styled-icons/remix-fill": "^10.28.0",
     "styled-media-query": "^2.1.2"
   },
   "devDependencies": {

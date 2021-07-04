@@ -1,4 +1,4 @@
-import { Email, Lock } from 'styled-icons/material-outlined';
+import { Email, Lock } from '@styled-icons/material-outlined';
 import Link from 'next/link';
 import Button from '../Button';
 import TextField from '../TextField';

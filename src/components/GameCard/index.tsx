@@ -2,7 +2,7 @@ import {
   FavoriteBorder,
   AddShoppingCart,
   Favorite,
-} from 'styled-icons/material-outlined';
+} from '@styled-icons/material-outlined';
 import {
   Wrapper,
   ImageBox,
