@@ -17,9 +17,15 @@ type Platform = 'windows' | 'linux' | 'mac';
 
 export type GameDetailsProps = {
   platforms: Platform[];
+  developer: string;
+  releaseDate: string;
 };
 
-const GameDetails = ({ platforms }: GameDetailsProps) => {
+const GameDetails = ({
+  platforms,
+  developer,
+  releaseDate,
+}: GameDetailsProps) => {
   const platformIcons = {
     linux: <Linux title="Linux" size={18} />,
     mac: <Apple title="Mac" size={18} />,
@@ -37,12 +43,18 @@ const GameDetails = ({ platforms }: GameDetailsProps) => {
       <Content>
         <Block>
           <Label>Developer</Label>
-          <Description>Gearbox Software</Description>
+          <Description>{developer}</Description>
         </Block>
 
         <Block>
           <Label>Release Date</Label>
-          <Description>Nov 16, 2019</Description>
+          <Description>
+            {new Intl.DateTimeFormat('en-US', {
+              day: 'numeric',
+              month: 'short',
+              year: 'numeric',
+            }).format(new Date(releaseDate))}
+          </Description>
         </Block>
 
         <Block>
