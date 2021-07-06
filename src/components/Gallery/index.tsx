@@ -4,8 +4,9 @@
 import { useState } from 'react';
 import { ArrowBackIos as ArrowLeft } from '@styled-icons/material-outlined/ArrowBackIos';
 import { ArrowForwardIos as ArrowRight } from '@styled-icons/material-outlined/ArrowForwardIos';
+import { Close as IconClose } from '@styled-icons/material-outlined/Close';
 
-import { Wrapper, Modal } from './styles';
+import { Wrapper, Modal, Close } from './styles';
 import Slider, { SliderSettings } from '../Slider';
 
 export type GalleryImageProps = {
@@ -71,7 +72,15 @@ const Gallery = ({ items }: GalleryProps) => {
         ))}
       </Slider>
 
-      <Modal isOpen={isOpen} aria-label="modal" aria-hidden={!isOpen} />
+      <Modal isOpen={isOpen} aria-label="modal" aria-hidden={!isOpen}>
+        <Close
+          role="button"
+          aria-label="close modal"
+          onClick={() => setIsOpen(false)}
+        >
+          <IconClose size={40} />
+        </Close>
+      </Modal>
     </Wrapper>
   );
 };
