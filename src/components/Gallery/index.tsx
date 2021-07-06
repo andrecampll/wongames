@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ArrowBackIos as ArrowLeft } from '@styled-icons/material-outlined/ArrowBackIos';
 import { ArrowForwardIos as ArrowRight } from '@styled-icons/material-outlined/ArrowForwardIos';
 import { Close as IconClose } from '@styled-icons/material-outlined/Close';
@@ -55,6 +55,15 @@ const settings: SliderSettings = {
 
 const Gallery = ({ items }: GalleryProps) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const handleKeyUp = ({ key }: KeyboardEvent) =>
+      key === 'Escape' && setIsOpen(false);
+
+    window.addEventListener('keyup', handleKeyUp);
+
+    return () => window.removeEventListener('keyup', handleKeyUp);
+  }, []);
 
   return (
     <Wrapper>
