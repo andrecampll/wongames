@@ -1,12 +1,14 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { ArrowBackIos as ArrowLeft } from '@styled-icons/material-outlined/ArrowBackIos';
 import { ArrowForwardIos as ArrowRight } from '@styled-icons/material-outlined/ArrowForwardIos';
 import { Close as IconClose } from '@styled-icons/material-outlined/Close';
+import SlickSlider from 'react-slick';
 
-import { Wrapper, Modal, Close } from './styles';
+import { Wrapper, Modal, Close, Content } from './styles';
 import Slider, { SliderSettings } from '../Slider';
 
 export type GalleryImageProps = {
@@ -18,13 +20,17 @@ export type GalleryProps = {
   items: GalleryImageProps[];
 };
 
-const settings: SliderSettings = {
+const commonSettings: SliderSettings = {
+  infinite: false,
+  lazyLoad: 'ondemand',
   arrows: true,
   nextArrow: <ArrowRight aria-label="next image" />,
   prevArrow: <ArrowLeft aria-label="previous image" />,
+};
+
+const settings: SliderSettings = {
+  ...commonSettings,
   slidesToShow: 4,
-  infinite: false,
-  lazyLoad: 'ondemand',
   responsive: [
     {
       breakpoint: 1375,
@@ -53,7 +59,13 @@ const settings: SliderSettings = {
   ],
 };
 
+const modalSettings: SliderSettings = {
+  ...commonSettings,
+  slidesToShow: 1,
+};
+
 const Gallery = ({ items }: GalleryProps) => {
+  const slider = useRef<SlickSlider>(null);
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -67,7 +79,7 @@ const Gallery = ({ items }: GalleryProps) => {
 
   return (
     <Wrapper>
-      <Slider settings={settings}>
+      <Slider ref={slider} settings={settings}>
         {items.map((item, index) => (
           <img
             key={`thumb-${index}`}
@@ -76,6 +88,7 @@ const Gallery = ({ items }: GalleryProps) => {
             alt={`Thumb - ${item.label}`}
             onClick={() => {
               setIsOpen(true);
+              slider.current!.slickGoTo(index, true);
             }}
           />
         ))}
@@ -89,6 +102,14 @@ const Gallery = ({ items }: GalleryProps) => {
         >
           <IconClose size={40} />
         </Close>
+
+        <Content>
+          <Slider ref={slider} settings={modalSettings}>
+            {items.map((item, index) => (
+              <img key={`gallery-${index}`} src={item.src} alt={item.label} />
+            ))}
+          </Slider>
+        </Content>
       </Modal>
     </Wrapper>
   );
