@@ -1,11 +1,24 @@
 /* eslint-disable jsx-a11y/aria-role */
 import Base from '../Base';
 
-import { Cover } from './styles';
+import GameInfo, { GameInfoProps } from '../../components/GameInfo';
 
-const Game = () => (
+import { Cover, Main, SectionGameInfo } from './styles';
+
+export type GameTemplateProps = {
+  cover: string;
+  gameInfo: GameInfoProps;
+};
+
+const Game = ({ cover, gameInfo }: GameTemplateProps) => (
   <Base>
-    <Cover src="test" role="image" aria-label="cover" />
+    <Cover src={cover} role="image" aria-label="cover" />
+
+    <Main>
+      <SectionGameInfo>
+        <GameInfo {...gameInfo} />
+      </SectionGameInfo>
+    </Main>
   </Base>
 );
 
