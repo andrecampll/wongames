@@ -19,6 +19,7 @@ type Rating = 'BR0' | 'BR10' | 'BR12' | 'BR14' | 'BR16' | 'BR18';
 
 export type GameDetailsProps = {
   platforms: Platform[];
+  publisher: string;
   developer: string;
   releaseDate: string;
   rating: Rating;
@@ -31,6 +32,7 @@ const GameDetails = ({
   releaseDate,
   rating,
   genres,
+  publisher,
 }: GameDetailsProps) => {
   const platformIcons = {
     linux: <Linux title="Linux" size={18} />,
@@ -74,7 +76,7 @@ const GameDetails = ({
 
         <Block>
           <Label>Publisher</Label>
-          <Description>2K</Description>
+          <Description>{publisher}</Description>
         </Block>
 
         <Block>

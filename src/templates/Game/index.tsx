@@ -4,6 +4,7 @@ import Base from '../Base';
 import GameInfo, { GameInfoProps } from '../../components/GameInfo';
 import Gallery, { GalleryImageProps } from '../../components/Gallery';
 import TextContent from '../../components/TextContent';
+import GameDetails, { GameDetailsProps } from '../../components/GameDetails';
 
 import {
   Cover,
@@ -11,6 +12,7 @@ import {
   SectionGameInfo,
   SectionGallery,
   SectionDescription,
+  SectionGameDetails,
 } from './styles';
 
 export type GameTemplateProps = {
@@ -18,9 +20,16 @@ export type GameTemplateProps = {
   gameInfo: GameInfoProps;
   gallery?: GalleryImageProps[];
   description: string;
+  details: GameDetailsProps;
 };
 
-const Game = ({ cover, gameInfo, gallery, description }: GameTemplateProps) => (
+const Game = ({
+  cover,
+  gameInfo,
+  gallery,
+  description,
+  details,
+}: GameTemplateProps) => (
   <Base>
     <Cover src={cover} role="image" aria-label="cover" />
 
@@ -36,6 +45,10 @@ const Game = ({ cover, gameInfo, gallery, description }: GameTemplateProps) => (
       <SectionDescription>
         <TextContent title="Description" content={description} />
       </SectionDescription>
+
+      <SectionGameDetails>
+        <GameDetails {...details} />
+      </SectionGameDetails>
     </Main>
   </Base>
 );

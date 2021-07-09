@@ -6,6 +6,7 @@ import GameDetails, { GameDetailsProps } from '../../../components/GameDetails';
 import { renderWithTheme } from '../../../utils/tests/helpers';
 
 const props: GameDetailsProps = {
+  publisher: '2K',
   developer: 'Different Tales',
   platforms: ['windows', 'linux', 'mac'],
   releaseDate: '2020-11-21T23:00:00',
@@ -50,6 +51,18 @@ describe('<GameDetails/>', () => {
     renderWithTheme(<GameDetails {...props} />);
 
     expect(screen.getByText('Nov 21, 2020')).toBeInTheDocument();
+  });
+
+  it('should render the developer', () => {
+    renderWithTheme(<GameDetails {...props} />);
+
+    expect(screen.getByText(/different tales/i)).toBeInTheDocument();
+  });
+
+  it('should render the publisher', () => {
+    renderWithTheme(<GameDetails {...props} />);
+
+    expect(screen.getByText(/2k/i)).toBeInTheDocument();
   });
 
   it('should be able to render free rating when BR0', () => {
