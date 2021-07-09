@@ -8,6 +8,7 @@ import { renderWithTheme } from '../../../utils/tests/helpers';
 import Wishlist, { WishlistTemplateProps } from '../../../templates/Wishlist';
 
 const props: WishlistTemplateProps = {
+  games: gamesMock,
   recommendedGames: gamesMock,
   recommendedHighlist: highlightMock,
 };
@@ -29,6 +30,7 @@ describe('Wishlist', () => {
       }),
     ).toBeInTheDocument();
 
+    expect(screen.getAllByText(/population zero/i)).toHaveLength(6);
     expect(screen.getByTestId('Mock Showcase')).toMatchSnapshot();
   });
 });
