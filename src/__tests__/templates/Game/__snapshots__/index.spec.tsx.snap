@@ -146,6 +146,13 @@ exports[`Game should be able to render with components 1`] = `
   margin: 2.4rem 0;
 }
 
+.c11 {
+  margin: 5.6rem auto 3.2rem;
+  height: 0.1rem;
+  background: rgba(181,181,181,0.3);
+  border: 0;
+}
+
 .c4 {
   margin-top: 20rem;
 }
@@ -174,11 +181,6 @@ exports[`Game should be able to render with components 1`] = `
   color: #8F8F8F;
   font-size: 1.2rem;
   margin-top: 3.2rem;
-}
-
-.c11 > div {
-  padding-bottom: 4.8rem;
-  border-bottom: 0.1rem solid rgba(181,181,181,0.3);
 }
 
 @media (min-width:768px) {
@@ -221,6 +223,12 @@ exports[`Game should be able to render with components 1`] = `
 }
 
 @media (min-width:768px) {
+  .c11 {
+    margin: calc(5.6rem * 2.5) auto 5.6rem;
+  }
+}
+
+@media (min-width:768px) {
   .c4 {
     margin-top: 45rem;
   }
@@ -243,12 +251,6 @@ exports[`Game should be able to render with components 1`] = `
 @media (min-width:768px) {
   .c6 {
     display: block;
-  }
-}
-
-@media (min-width:768px) {
-  .c11 > div {
-    padding-bottom: calc(5.6rem * 2);
   }
 }
 
@@ -308,10 +310,13 @@ exports[`Game should be able to render with components 1`] = `
         </div>
       </section>
       <section
-        class="c1 c5 c11"
+        class="c1 c5"
       >
         <div
           data-testid="Mock GameDetails"
+        />
+        <hr
+          class="c11"
         />
       </section>
       <div
