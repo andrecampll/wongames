@@ -2,9 +2,10 @@ import Base from '../Base';
 
 import Heading from '../../components/Heading';
 import Showcase from '../../components/Showcase';
-import { Container } from '../../components/Container';
 import GameCard, { GameCardProps } from '../../components/GameCard';
+import { Container } from '../../components/Container';
 import { HighlightProps } from '../../components/Highlight';
+import { Grid } from '../../components/Grid';
 
 // import { Wrapper } from './styles';
 
@@ -25,9 +26,11 @@ const Wishlist = ({
         Wishlist
       </Heading>
 
-      {games?.map((game, index) => (
-        <GameCard key={`wishlist-game-${index}`} {...game} />
-      ))}
+      <Grid>
+        {games?.map((game, index) => (
+          <GameCard key={`wishlist-game-${index}`} {...game} />
+        ))}
+      </Grid>
     </Container>
 
     <Showcase
