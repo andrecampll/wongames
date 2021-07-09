@@ -35,7 +35,7 @@ export const SectionNews = styled.div`
   `}
 `;
 
-export const SectionUpcoming = styled.div`
+export const SectionUpcomming = styled.div`
   ${({ theme }) => css`
     ${HighlightStyles.Wrapper} {
       margin-top: calc(${theme.spacings.xlarge} * 2);
