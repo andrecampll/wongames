@@ -8,7 +8,7 @@ import { BannerProps } from '../../components/Banner';
 import { Container } from '../../components/Container';
 import { GameCardProps } from '../../components/GameCard';
 
-import { SectionBanner, SectionUpcoming, SectionNews } from './styles';
+import { SectionBanner, SectionUpcomming, SectionNews } from './styles';
 
 export type HomeTemplateProps = {
   banners: BannerProps[];
@@ -50,11 +50,11 @@ const Home = ({
       games={mostPopularGames}
     />
 
-    <SectionUpcoming>
+    <SectionUpcomming>
       <Showcase title="Upcomming" games={upcommingGames} />
 
       <Showcase highlight={upcommingHighlight} games={upcommingMoreGames} />
-    </SectionUpcoming>
+    </SectionUpcomming>
 
     <Showcase title="Free Games" highlight={freeHighlight} games={freeGames} />
   </Base>

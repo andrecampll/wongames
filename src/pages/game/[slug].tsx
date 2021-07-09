@@ -1,4 +1,6 @@
 import galleryMock from '../../components/Gallery/mock';
+import gamesMock from '../../components/GameCardSlider/mock';
+import highlightMock from '../../components/Highlight/mock';
 import Game, { GameTemplateProps } from '../../templates/Game';
 
 export default function Index(props: GameTemplateProps) {
@@ -51,6 +53,9 @@ export const getStaticProps = () => {
         rating: 'BR18',
         genres: ['Action', 'Role-playing'],
       },
+      upcommingGames: gamesMock,
+      upcommingHighlight: highlightMock,
+      recommendedGames: gamesMock,
     },
   };
 };
