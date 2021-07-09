@@ -8,6 +8,7 @@ import GameDetails, { GameDetailsProps } from '../../components/GameDetails';
 import { GameCardProps } from '../../components/GameCard';
 import { HighlightProps } from '../../components/Highlight';
 import Showcase from '../../components/Showcase';
+import { Divider } from '../../components/Divider';
 
 import {
   Cover,
@@ -57,6 +58,7 @@ const Game = ({
 
       <SectionGameDetails>
         <GameDetails {...details} />
+        <Divider />
       </SectionGameDetails>
 
       <Showcase

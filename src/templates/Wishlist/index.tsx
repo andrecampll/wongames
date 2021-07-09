@@ -6,8 +6,7 @@ import GameCard, { GameCardProps } from '../../components/GameCard';
 import { Container } from '../../components/Container';
 import { HighlightProps } from '../../components/Highlight';
 import { Grid } from '../../components/Grid';
-
-// import { Wrapper } from './styles';
+import { Divider } from '../../components/Divider';
 
 export type WishlistTemplateProps = {
   games?: GameCardProps[];
@@ -31,6 +30,7 @@ const Wishlist = ({
           <GameCard key={`wishlist-game-${index}`} {...game} />
         ))}
       </Grid>
+      <Divider />
     </Container>
 
     <Showcase
