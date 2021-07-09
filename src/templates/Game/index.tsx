@@ -1,8 +1,11 @@
+/* eslint-disable jsx-a11y/aria-role */
 import Base from '../Base';
+
+import { Cover } from './styles';
 
 const Game = () => (
   <Base>
-    <h1>Game</h1>
+    <Cover src="test" role="image" aria-label="cover" />
   </Base>
 );
 
