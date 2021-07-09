@@ -93,6 +93,7 @@ exports[`Game should be able to render with components 1`] = `
 }
 
 .c2 {
+  margin-top: 4.8rem;
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
