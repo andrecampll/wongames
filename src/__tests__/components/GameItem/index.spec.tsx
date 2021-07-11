@@ -9,7 +9,7 @@ const props = {
   price: 'R$ 215,00',
 };
 
-describe('GameItem', () => {
+describe('<GameItem/>', () => {
   it('should be able to render the idem', () => {
     renderWithTheme(<GameItem {...props} />);
 
