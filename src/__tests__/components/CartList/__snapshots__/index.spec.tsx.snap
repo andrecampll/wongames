@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartList should be able to render 1`] = `
+<main
+  class="sc-bdfBwQ hPnCPu"
+>
+  <div
+    class="sc-hKgILt PenKS"
+  >
+    <div
+      class="sc-eCssSg hssOJK"
+    >
+      <div
+        class="sc-jSgupP bDqejn"
+      >
+        <img
+          alt="Red Dead Redemption 2"
+          src="https://source.unsplash.com/user/willianjusten/151x70"
+        />
+      </div>
+      <div
+        class="sc-gKsewC kpacqP"
+      >
+        <h3
+          class="sc-iBPRYJ cemXeR"
+        >
+          Red Dead Redemption 2
+        </h3>
+        <p
+          class="sc-fubCfw dpslTO"
+        >
+          R$ 215,00
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    class="sc-hKgILt PenKS"
+  >
+    <div
+      class="sc-eCssSg hssOJK"
+    >
+      <div
+        class="sc-jSgupP bDqejn"
+      >
+        <img
+          alt="Borderlands 3"
+          src="https://source.unsplash.com/user/willianjusten/151x70"
+        />
+      </div>
+      <div
+        class="sc-gKsewC kpacqP"
+      >
+        <h3
+          class="sc-iBPRYJ cemXeR"
+        >
+          Borderlands 3
+        </h3>
+        <p
+          class="sc-fubCfw dpslTO"
+        >
+          R$ 215,00
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    class="sc-gsTCUz yhPKj"
+  >
+    Total 
+    <span
+      class="sc-dlfnbm cmwfwe"
+    >
+      R$ 330,00
+    </span>
+  </div>
+</main>
+`;
