@@ -8,16 +8,32 @@ import {
   Title,
   Price,
   DownloadLink,
+  PaymentContent,
+  CardInfo,
 } from './styles';
+
+export type PaymentInfoProps = {
+  number: string;
+  flag: string;
+  img: string;
+  purchaseDate: string;
+};
 
 export type GameItemProps = {
   img: string;
   title: string;
   price: string;
   downloadLink?: string;
+  paymentInfo?: PaymentInfoProps;
 };
 
-const GameItem = ({ img, title, price, downloadLink }: GameItemProps) => (
+const GameItem = ({
+  img,
+  title,
+  price,
+  downloadLink,
+  paymentInfo,
+}: GameItemProps) => (
   <Wrapper>
     <GameContent>
       <ImageBox>
@@ -40,6 +56,16 @@ const GameItem = ({ img, title, price, downloadLink }: GameItemProps) => (
         <Price>{price}</Price>
       </Content>
     </GameContent>
+
+    {!!paymentInfo && (
+      <PaymentContent>
+        <p>{paymentInfo.purchaseDate}</p>
+        <CardInfo>
+          <span>{paymentInfo.number}</span>
+          <img src={paymentInfo.img} alt={paymentInfo.flag} />
+        </CardInfo>
+      </PaymentContent>
+    )}
   </Wrapper>
 );
 
