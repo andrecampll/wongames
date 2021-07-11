@@ -1,3 +1,5 @@
+import { Download } from '@styled-icons/boxicons-solid/Download';
+
 import {
   Wrapper,
   GameContent,
@@ -5,15 +7,17 @@ import {
   Content,
   Title,
   Price,
+  DownloadLink,
 } from './styles';
 
 export type GameItemProps = {
   img: string;
   title: string;
   price: string;
+  downloadLink?: string;
 };
 
-const GameItem = ({ img, title, price }: GameItemProps) => (
+const GameItem = ({ img, title, price, downloadLink }: GameItemProps) => (
   <Wrapper>
     <GameContent>
       <ImageBox>
@@ -21,7 +25,18 @@ const GameItem = ({ img, title, price }: GameItemProps) => (
       </ImageBox>
 
       <Content>
-        <Title>{title}</Title>
+        <Title>
+          {title}
+          {!!downloadLink && (
+            <DownloadLink
+              href={downloadLink}
+              target="_blank"
+              aria-label={`Get ${title} here`}
+            >
+              <Download size={22} />
+            </DownloadLink>
+          )}
+        </Title>
         <Price>{price}</Price>
       </Content>
     </GameContent>
