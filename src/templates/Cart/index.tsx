@@ -1,4 +1,5 @@
 import Base from '../Base';
+import Empty from '../../components/Empty';
 import Heading from '../../components/Heading';
 import Showcase from '../../components/Showcase';
 import { Divider } from '../../components/Divider';
@@ -34,11 +35,19 @@ const Cart = ({
           My cart
         </Heading>
 
-        <Content>
-          <CartList items={items} total={total} />
+        {items.length ? (
+          <Content>
+            <CartList items={items} total={total} />
 
-          <PaymentOptions cards={cards} handlePayment={handlePayment} />
-        </Content>
+            <PaymentOptions cards={cards} handlePayment={handlePayment} />
+          </Content>
+        ) : (
+          <Empty
+            title="Your cart is empty"
+            description="Go back to the store and explore great games and offers"
+            hasLink
+          />
+        )}
         <Divider />
       </Container>
 
