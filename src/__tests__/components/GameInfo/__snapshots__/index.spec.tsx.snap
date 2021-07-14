@@ -25,7 +25,7 @@ exports[`GameInfo should be able to render game information 1`] = `
     class="sc-jSgupP hmhGCB"
   >
     <button
-      class="sc-dlfnbm bBvOdd"
+      class="sc-dlfnbm MPnKe"
     >
       <svg
         aria-hidden="true"
@@ -48,7 +48,7 @@ exports[`GameInfo should be able to render game information 1`] = `
       </span>
     </button>
     <button
-      class="sc-dlfnbm bTvryp"
+      class="sc-dlfnbm izdDty"
     >
       <svg
         aria-hidden="true"
