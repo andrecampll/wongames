@@ -5,8 +5,9 @@ exports[`ProfileMenu should be able to render 1`] = `
   class="sc-bdfBwQ hZPDBO"
 >
   <a
-    class="sc-gsTCUz ilgzZ"
+    class="sc-gsTCUz hFGpGx"
     href="/profile/me"
+    title="My profile"
   >
     <svg
       aria-hidden="true"
@@ -31,8 +32,9 @@ exports[`ProfileMenu should be able to render 1`] = `
     </span>
   </a>
   <a
-    class="sc-gsTCUz ilgzZ"
+    class="sc-gsTCUz hFGpGx"
     href="/profile/cards"
+    title="My cards"
   >
     <svg
       aria-hidden="true"
@@ -57,8 +59,9 @@ exports[`ProfileMenu should be able to render 1`] = `
     </span>
   </a>
   <a
-    class="sc-gsTCUz ilgzZ"
+    class="sc-gsTCUz hFGpGx"
     href="/profile/orders"
+    title="My orders"
   >
     <svg
       aria-hidden="true"
@@ -83,7 +86,7 @@ exports[`ProfileMenu should be able to render 1`] = `
     </span>
   </a>
   <a
-    class="sc-gsTCUz ilgzZ"
+    class="sc-gsTCUz hFGpGx"
     href="/logout"
   >
     <svg

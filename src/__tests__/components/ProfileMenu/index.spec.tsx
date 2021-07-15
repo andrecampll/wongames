@@ -11,6 +11,7 @@ describe('ProfileMenu', () => {
     ).toBeInTheDocument();
 
     expect(screen.getByRole('link', { name: /my cards/i })).toBeInTheDocument();
+
     expect(
       screen.getByRole('link', { name: /my orders/i }),
     ).toBeInTheDocument();
@@ -18,5 +19,14 @@ describe('ProfileMenu', () => {
     expect(screen.getByRole('link', { name: /sign out/i })).toBeInTheDocument();
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  it('should be able to render the menu with an active link defined', () => {
+    renderWithTheme(<ProfileMenu activeLink="/profile/cards" />);
+
+    expect(screen.getByRole('link', { name: /my cards/i })).toHaveStyle({
+      background: '#F231A5',
+      color: '#FAFAFA',
+    });
   });
 });
