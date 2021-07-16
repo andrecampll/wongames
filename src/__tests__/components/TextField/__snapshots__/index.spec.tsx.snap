@@ -6,7 +6,6 @@ exports[`<TextField /> Renders with error 1`] = `
 >
   <label
     class="sc-dlfnbm jsUlVz"
-    for="TextField"
   >
     TextField
   </label>
