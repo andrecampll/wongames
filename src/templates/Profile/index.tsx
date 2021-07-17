@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { useRouter } from 'next/router';
 
 import Base from '../Base';
 import Heading from '../../components/Heading';
@@ -11,19 +12,23 @@ export type ProfileTemplateProps = {
   children: ReactNode;
 };
 
-const Profile = ({ children }: ProfileTemplateProps) => (
-  <Base>
-    <Container>
-      <Heading lineLeft lineColor="secondary">
-        My profile
-      </Heading>
+const Profile = ({ children }: ProfileTemplateProps) => {
+  const { asPath } = useRouter();
 
-      <Main>
-        <ProfileMenu />
-        <Content>{children}</Content>
-      </Main>
-    </Container>
-  </Base>
-);
+  return (
+    <Base>
+      <Container>
+        <Heading lineLeft lineColor="secondary">
+          My profile
+        </Heading>
+
+        <Main>
+          <ProfileMenu activeLink={asPath} />
+          <Content>{children}</Content>
+        </Main>
+      </Container>
+    </Base>
+  );
+};
 
 export default Profile;
