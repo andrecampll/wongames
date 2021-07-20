@@ -2,9 +2,11 @@ import { screen } from '@testing-library/react';
 import ExploreSidebar from '../../../components/ExploreSidebar';
 import { renderWithTheme } from '../../../utils/tests/helpers';
 
+import items from '../../../components/ExploreSidebar/mock';
+
 describe('ExploreSidebar', () => {
   it('should be able to render the headings', () => {
-    renderWithTheme(<ExploreSidebar />);
+    renderWithTheme(<ExploreSidebar items={items} onFilter={jest.fn} />);
 
     expect(
       screen.getByRole('heading', {
@@ -21,7 +23,7 @@ describe('ExploreSidebar', () => {
   });
 
   it('should be able to render Inputs', () => {
-    renderWithTheme(<ExploreSidebar />);
+    renderWithTheme(<ExploreSidebar items={items} onFilter={jest.fn} />);
 
     expect(
       screen.getByRole('checkbox', { name: /under \$50/i }),
@@ -33,7 +35,7 @@ describe('ExploreSidebar', () => {
   });
 
   it('should render the filter button', () => {
-    renderWithTheme(<ExploreSidebar />);
+    renderWithTheme(<ExploreSidebar items={items} onFilter={jest.fn} />);
 
     expect(screen.getByRole('button', { name: /filter/i })).toBeInTheDocument();
   });
