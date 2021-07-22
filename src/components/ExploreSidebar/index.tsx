@@ -29,16 +29,25 @@ export type ExploreSidebarProps = {
   onFilter: (values: Values) => void;
 };
 
-const ExploreSidebar = ({ items, initialValues = {} }: ExploreSidebarProps) => {
+const ExploreSidebar = ({
+  items,
+  initialValues = {},
+  onFilter,
+}: ExploreSidebarProps) => {
   const [values, setValues] = useState(initialValues);
-  // const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleChange = (name: string, value: string | boolean) => {
     setValues(s => ({ ...s, [name]: value }));
   };
 
+  const handleFilter = () => {
+    onFilter(values);
+    setIsOpen(false);
+  };
+
   return (
-    <Wrapper>
+    <Wrapper isOpen={isOpen}>
       {items.map(item => (
         <div key={item.title}>
           <Heading lineBottom lineColor="secondary" size="small">
@@ -72,7 +81,7 @@ const ExploreSidebar = ({ items, initialValues = {} }: ExploreSidebarProps) => {
             ))}
         </div>
       ))}
-      <Button fullWidth size="medium">
+      <Button fullWidth size="medium" onClick={handleFilter}>
         Filter
       </Button>
     </Wrapper>

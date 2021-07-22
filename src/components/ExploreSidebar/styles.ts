@@ -1,3 +1,7 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div``;
+type WrapperProps = {
+  isOpen: boolean;
+};
+
+export const Wrapper = styled.div<WrapperProps>``;
