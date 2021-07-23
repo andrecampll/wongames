@@ -1,11 +1,20 @@
 import { useState } from 'react';
+import { Close } from '@styled-icons/material-outlined/Close';
+import { FilterList } from '@styled-icons/material-outlined/FilterList';
 
 import Heading from '../Heading';
 import Checkbox from '../Checkbox';
 import Radio from '../Radio';
 import Button from '../Button';
 
-import { Wrapper } from './styles';
+import {
+  Wrapper,
+  Overlay,
+  IconWrapper,
+  Items,
+  Content,
+  Footer,
+} from './styles';
 
 export type ItemProps = {
   title: string;
@@ -48,42 +57,53 @@ const ExploreSidebar = ({
 
   return (
     <Wrapper isOpen={isOpen}>
-      {items.map(item => (
-        <div key={item.title}>
-          <Heading lineBottom lineColor="secondary" size="small">
-            {item.title}
-          </Heading>
+      <Overlay aria-hidden={isOpen} />
+      <IconWrapper>
+        <FilterList aria-label="open filters" onClick={() => setIsOpen(true)} />
+        <Close aria-label="close filters" onClick={() => setIsOpen(false)} />
+      </IconWrapper>
 
-          {item.type === 'checkbox' &&
-            item.fields.map(field => (
-              <Checkbox
-                key={field.name}
-                name={field.name}
-                label={field.label}
-                labelFor={field.name}
-                isChecked={!!values[field.name]}
-                onCheck={v => handleChange(field.name, v)}
-              />
-            ))}
+      <Content>
+        {items.map(item => (
+          <Items key={item.title}>
+            <Heading lineBottom lineColor="secondary" size="small">
+              {item.title}
+            </Heading>
 
-          {item.type === 'radio' &&
-            item.fields.map(field => (
-              <Radio
-                id={field.name}
-                key={field.name}
-                value={field.name}
-                name={item.name}
-                label={field.label}
-                labelFor={field.name}
-                defaultChecked={field.name === values[item.name]}
-                onChange={() => handleChange(item.name, field.name)}
-              />
-            ))}
-        </div>
-      ))}
-      <Button fullWidth size="medium" onClick={handleFilter}>
-        Filter
-      </Button>
+            {item.type === 'checkbox' &&
+              item.fields.map(field => (
+                <Checkbox
+                  key={field.name}
+                  name={field.name}
+                  label={field.label}
+                  labelFor={field.name}
+                  isChecked={!!values[field.name]}
+                  onCheck={v => handleChange(field.name, v)}
+                />
+              ))}
+
+            {item.type === 'radio' &&
+              item.fields.map(field => (
+                <Radio
+                  id={field.name}
+                  key={field.name}
+                  value={field.name}
+                  name={item.name}
+                  label={field.label}
+                  labelFor={field.name}
+                  defaultChecked={field.name === values[item.name]}
+                  onChange={() => handleChange(item.name, field.name)}
+                />
+              ))}
+          </Items>
+        ))}
+      </Content>
+
+      <Footer>
+        <Button fullWidth size="medium" onClick={handleFilter}>
+          Filter
+        </Button>
+      </Footer>
     </Wrapper>
   );
 };
