@@ -2,16 +2,16 @@
 
 exports[`CartList should be able to render 1`] = `
 <main
-  class="sc-jrAGrp lhppnC"
+  class="sc-dQppl YkPUn"
 >
   <div
-    class="sc-gsTCUz cvryDX"
+    class="sc-jSgupP hnZGpM"
   >
     <div
-      class="sc-dlfnbm cCcsbP"
+      class="sc-gKsewC jSeLHy"
     >
       <div
-        class="sc-hKgILt iXkAKV"
+        class="sc-iBPRYJ bZbbiG"
       >
         <img
           alt="Red Dead Redemption 2"
@@ -19,15 +19,15 @@ exports[`CartList should be able to render 1`] = `
         />
       </div>
       <div
-        class="sc-eCssSg iIMDDH"
+        class="sc-fubCfw fuuBOu"
       >
         <h3
-          class="sc-jSgupP gsFUoI"
+          class="sc-pFZIQ hXPbHb"
         >
           Red Dead Redemption 2
         </h3>
         <p
-          class="sc-gKsewC EEujD"
+          class="sc-jrAGrp dzLsER"
         >
           R$ 215,00
         </p>
@@ -35,13 +35,13 @@ exports[`CartList should be able to render 1`] = `
     </div>
   </div>
   <div
-    class="sc-gsTCUz cvryDX"
+    class="sc-jSgupP hnZGpM"
   >
     <div
-      class="sc-dlfnbm cCcsbP"
+      class="sc-gKsewC jSeLHy"
     >
       <div
-        class="sc-hKgILt iXkAKV"
+        class="sc-iBPRYJ bZbbiG"
       >
         <img
           alt="Borderlands 3"
@@ -49,15 +49,15 @@ exports[`CartList should be able to render 1`] = `
         />
       </div>
       <div
-        class="sc-eCssSg iIMDDH"
+        class="sc-fubCfw fuuBOu"
       >
         <h3
-          class="sc-jSgupP gsFUoI"
+          class="sc-pFZIQ hXPbHb"
         >
           Borderlands 3
         </h3>
         <p
-          class="sc-gKsewC EEujD"
+          class="sc-jrAGrp dzLsER"
         >
           R$ 215,00
         </p>
@@ -65,13 +65,13 @@ exports[`CartList should be able to render 1`] = `
     </div>
   </div>
   <div
-    class="sc-kEjbxe lfAwBw"
+    class="sc-bqyKva coqIZJ"
   >
     <span>
       Total:
     </span>
     <span
-      class="sc-iqHYGH kpHmGL"
+      class="sc-kstrdz cGmhud"
     >
       R$ 330,00
     </span>
