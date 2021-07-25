@@ -10,7 +10,20 @@ export const Basic: Story<MenuProps> = args => <Menu {...args} />;
 
 Basic.parameters = {
   layout: 'fullscreen',
-  background: {
+  backgrounds: {
     default: 'dark',
   },
+};
+
+export const Logged: Story<MenuProps> = args => <Menu {...args} />;
+
+Logged.parameters = {
+  layout: 'fullscreen',
+  backgrounds: {
+    default: 'dark',
+  },
+};
+
+Logged.args = {
+  username: 'John Doe',
 };
