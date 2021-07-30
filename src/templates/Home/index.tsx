@@ -11,7 +11,6 @@ import { GameCardProps } from '../../components/GameCard';
 import { SectionBanner, SectionUpcoming, SectionNews } from './styles';
 
 export type HomeTemplateProps = {
-  data: any;
   banners: BannerProps[];
   newGames: GameCardProps[];
   mostPopularHighlight: HighlightProps;
