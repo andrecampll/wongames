@@ -7,6 +7,7 @@ import theme from '../../../styles/theme';
 import 'jest-styled-components';
 
 const props = {
+  slug: 'population-zero',
   title: 'Population Zero',
   developer: 'Rockstar Games',
   image: 'https://source.unsplash.com/user/willianjusten/300x140',
@@ -15,7 +16,7 @@ const props = {
 
 describe('GameCard', () => {
   it('should be able to render correctly', () => {
-    renderWithTheme(<GameCard {...props} />);
+    const { container } = renderWithTheme(<GameCard {...props} />);
 
     expect(
       screen.getByRole('heading', {
@@ -35,7 +36,14 @@ describe('GameCard', () => {
       }),
     ).toHaveAttribute('src', props.image);
 
+    expect(screen.getByRole('link', { name: props.title })).toHaveAttribute(
+      'href',
+      `/game/${props.slug}`,
+    );
+
     expect(screen.getByLabelText(/add to wishlist/i)).toBeInTheDocument();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should be able to render default price in label', () => {
