@@ -7,6 +7,7 @@ import Heading from '../Heading';
 import Ribbon from '../Ribbon';
 import Button from '../Button';
 import { Wrapper, Description, ButtonsWrapper } from './styles';
+import { formatPrice } from '../../utils/format-price';
 
 export type GameInfoProps = {
   title: string;
@@ -20,12 +21,7 @@ const GameInfo = ({ title, description, price }: GameInfoProps) => (
       {title}
     </Heading>
 
-    <Ribbon color="secondary">
-      {new Intl.NumberFormat('en', {
-        style: 'currency',
-        currency: 'USD',
-      }).format(price)}
-    </Ribbon>
+    <Ribbon color="secondary">{formatPrice(price)}</Ribbon>
 
     <Description>{description}</Description>
 
