@@ -4,33 +4,25 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL query operation: QueryGames
+// GraphQL fragment: GameFragment
 // ====================================================
 
-export interface QueryGames_games_cover {
+export interface GameFragment_cover {
   __typename: "UploadFile";
   url: string;
 }
 
-export interface QueryGames_games_developers {
+export interface GameFragment_developers {
   __typename: "Developer";
   name: string;
 }
 
-export interface QueryGames_games {
+export interface GameFragment {
   __typename: "Game";
   id: string;
   name: string;
   slug: string;
-  cover: QueryGames_games_cover | null;
-  developers: QueryGames_games_developers[];
+  cover: GameFragment_cover | null;
+  developers: GameFragment_developers[];
   price: number;
-}
-
-export interface QueryGames {
-  games: QueryGames_games[];
-}
-
-export interface QueryGamesVariables {
-  limit: number;
 }
