@@ -59,6 +59,12 @@ describe('GameCard', () => {
     });
   });
 
+  it('should be able to render FREE when the price is 0', () => {
+    renderWithTheme(<GameCard {...props} price={0} />);
+
+    expect(screen.getByText(/free/i)).toBeInTheDocument();
+  });
+
   it('should be able to render price promotional in label', () => {
     renderWithTheme(<GameCard promotionalPrice={100} {...props} />);
 

@@ -15,7 +15,7 @@ export async function getServerSideProps() {
   const apolloClient = initializeApollo();
 
   const {
-    data: { banners, newGames },
+    data: { banners, newGames, upcomingGames, freeGames },
   } = await apolloClient.query<QueryHome>({ query: QUERY_HOME });
 
   return {
@@ -44,10 +44,27 @@ export async function getServerSideProps() {
       })),
       mostPopularHighlight: highlightMock,
       mostPopularGames: gamesMock,
-      upcomingGames: gamesMock,
+      upcomingGames: upcomingGames.map(
+        ({ name, slug, developers, cover, price }) => ({
+          title: name,
+          slug,
+          developer: developers[0].name,
+          image: cover?.url
+            ? `http://localhost:1337${cover?.url}`
+            : 'https://i.stack.imgur.com/y9DpT.jpg',
+          price,
+        }),
+      ),
       upcomingHighlight: highlightMock,
-      upcomingMoreGames: gamesMock,
-      freeGames: gamesMock,
+      freeGames: freeGames.map(({ name, slug, developers, cover, price }) => ({
+        title: name,
+        slug,
+        developer: developers[0].name,
+        image: cover?.url
+          ? `http://localhost:1337${cover?.url}`
+          : 'https://i.stack.imgur.com/y9DpT.jpg',
+        price,
+      })),
       freeHighlight: highlightMock,
     },
   };

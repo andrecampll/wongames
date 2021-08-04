@@ -20,7 +20,7 @@ import Ribbon, { RibbonColors, RibbonSizes } from '../Ribbon';
 import { formatPrice } from '../../utils/format-price';
 
 export type GameCardProps = {
-  slug: string;
+  slug?: string;
   title: string;
   developer: string;
   image: string;
@@ -75,7 +75,9 @@ const GameCard = ({
         {!!promotionalPrice && (
           <Price isPromotional>{formatPrice(price)}</Price>
         )}
-        <Price>{formatPrice(promotionalPrice || price)}</Price>
+        <Price>
+          {price === 0 ? 'FREE' : formatPrice(promotionalPrice || price)}
+        </Price>
         <Button icon={<AddShoppingCart />} size="small" />
       </BuyBox>
     </Content>
