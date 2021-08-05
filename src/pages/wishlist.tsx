@@ -1,22 +1,17 @@
-import { initializeApollo } from '../utils/apollo';
-import { QueryRecommended } from '../graphql/generated/QueryRecommended';
-import { QUERY_RECOMMENDED } from '../graphql/queries/recommended';
+/* eslint-disable react-hooks/rules-of-hooks */
 import { gamesMapper, highlightMapper } from '../utils/mappers';
 
 import gamesMock from '../components/GameCardSlider/mock';
 
 import Wishlist, { WishlistTemplateProps } from '../templates/Wishlist';
+import { useRecommendedGames } from '../hooks/useRecommendedGames';
 
 export default function WishlistPage(props: WishlistTemplateProps) {
   return <Wishlist {...props} />;
 }
 
 export async function getStaticProps() {
-  const apolloClient = initializeApollo();
-
-  const { data } = await apolloClient.query<QueryRecommended>({
-    query: QUERY_RECOMMENDED,
-  });
+  const { data } = await useRecommendedGames();
 
   return {
     props: {
