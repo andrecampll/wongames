@@ -1,9 +1,5 @@
-import {
-  QueryGames,
-  QueryGamesVariables,
-} from '../graphql/generated/QueryGames';
-import { initializeApollo } from '../utils/apollo';
-import { QUERY_GAMES } from '../graphql/queries/games';
+/* eslint-disable react-hooks/rules-of-hooks */
+import { useGames } from '../hooks/useGames';
 
 import GamesTemplate, { GamesTemplateProps } from '../templates/Games';
 import filterItemsMock from '../components/ExploreSidebar/mock';
@@ -13,14 +9,7 @@ export default function GamesPage(props: GamesTemplateProps) {
 }
 
 export async function getStaticProps() {
-  const apolloClient = initializeApollo();
-
-  const { data } = await apolloClient.query<QueryGames, QueryGamesVariables>({
-    query: QUERY_GAMES,
-    variables: {
-      limit: 1000,
-    },
-  });
+  const { data } = await useGames();
 
   return {
     props: {
