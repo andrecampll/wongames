@@ -4,8 +4,6 @@ import { QUERY_HOME } from '../graphql/queries/home';
 
 import Home, { HomeTemplateProps } from '../templates/Home';
 
-import highlightMock from '../components/Highlight/mock';
-
 export default function Index(props: HomeTemplateProps) {
   return <Home {...props} />;
 }
@@ -42,7 +40,15 @@ export async function getServerSideProps() {
         price,
       })),
       newGamesTitle: sections.newGames.title,
-      mostPopularHighlight: highlightMock,
+      mostPopularHighlight: {
+        title: sections.popularGames.highlight.title,
+        subtitle: sections.popularGames.highlight.subtitle,
+        backgroundImage: `http://localhost:1337${sections.popularGames.highlight.background.url}`,
+        floatImage: `http://localhost:1337${sections.popularGames.highlight.floatImage.url}`,
+        buttonLabel: sections.popularGames.highlight.buttonLabel,
+        buttonLink: sections.popularGames.highlight.buttonLink,
+        alignment: sections.popularGames.highlight.alignment,
+      },
       mostPopularGames: sections.popularGames.games.map(
         ({ name, slug, developers, cover, price }) => ({
           title: name,
@@ -67,7 +73,15 @@ export async function getServerSideProps() {
         }),
       ),
       upcomingGamesTitle: sections.upcomingGames.title,
-      upcomingHighlight: highlightMock,
+      upcomingHighlight: {
+        title: sections.upcomingGames.highlight.title,
+        subtitle: sections.upcomingGames.highlight.subtitle,
+        backgroundImage: `http://localhost:1337${sections.upcomingGames.highlight.background.url}`,
+        floatImage: `http://localhost:1337${sections.upcomingGames.highlight.floatImage.url}`,
+        buttonLabel: sections.upcomingGames.highlight.buttonLabel,
+        buttonLink: sections.upcomingGames.highlight.buttonLink,
+        alignment: sections.upcomingGames.highlight.alignment,
+      },
       freeGamesTitle: sections.freeGames.title,
       freeGames: freeGames.map(({ name, slug, developers, cover, price }) => ({
         title: name,
@@ -78,7 +92,15 @@ export async function getServerSideProps() {
           : 'https://i.stack.imgur.com/y9DpT.jpg',
         price,
       })),
-      freeHighlight: highlightMock,
+      freeHighlight: {
+        title: sections.freeGames.highlight.title,
+        subtitle: sections.freeGames.highlight.subtitle,
+        backgroundImage: `http://localhost:1337${sections.freeGames.highlight.background.url}`,
+        floatImage: `http://localhost:1337${sections.freeGames.highlight.floatImage.url}`,
+        buttonLabel: sections.freeGames.highlight.buttonLabel,
+        buttonLink: sections.freeGames.highlight.buttonLink,
+        alignment: sections.freeGames.highlight.alignment,
+      },
     },
   };
 }
