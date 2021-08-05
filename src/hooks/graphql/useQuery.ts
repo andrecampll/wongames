@@ -1,20 +1,20 @@
-import { QueryHookOptions, useQuery as useApolloQuery } from '@apollo/client';
-import { DocumentNode } from 'graphql';
 import { useCallback, useState } from 'react';
+import { DocumentNode } from 'graphql';
+import { QueryHookOptions, useQuery as useApolloQuery } from '@apollo/client';
 
 export const useQuery = <Result = unknown, Variables = Record<string, unknown>>(
   query: DocumentNode,
-  options: QueryHookOptions<Result, Variables>,
+  options: QueryHookOptions<Result, Variables> = {},
 ) => {
   const [refetching, setRefetching] = useState(false);
 
-  const { refetch: _refetch, ...result } = useApolloQuery<Result, Variables>(
-    query,
-    {
-      nextFetchPolicy: 'cache-first',
-      ...options,
-    },
-  );
+  const { error, refetch: _refetch, ...result } = useApolloQuery<
+    Result,
+    Variables
+  >(query, {
+    nextFetchPolicy: 'cache-first',
+    ...options,
+  });
 
   const refetch = useCallback(
     (variables?: Variables) => {
@@ -27,6 +27,7 @@ export const useQuery = <Result = unknown, Variables = Record<string, unknown>>(
   return {
     refetch,
     refetching,
+    error,
     ...result,
   };
 };
