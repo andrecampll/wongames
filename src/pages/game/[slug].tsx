@@ -1,6 +1,9 @@
 import { useRouter } from 'next/router';
 import { GetStaticProps } from 'next';
 import { initializeApollo } from '../../utils/apollo';
+import { QueryRecommended } from '../../graphql/generated/QueryRecommended';
+import { QUERY_RECOMMENDED } from '../../graphql/queries/recommended';
+import { gamesMapper } from '../../utils/mappers';
 import {
   QueryGames,
   QueryGamesVariables,
@@ -43,7 +46,7 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { data } = await apolloClient.query<
+  const { data: gameData } = await apolloClient.query<
     QueryGameBySlug,
     QueryGameBySlugVariables
   >({
@@ -53,13 +56,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
   });
 
-  if (!data.games.length) {
+  const { data: recommendedData } = await apolloClient.query<QueryRecommended>({
+    query: QUERY_RECOMMENDED,
+  });
+
+  if (!gameData.games.length) {
     return {
       notFound: true,
     };
   }
 
-  const game = data.games[0];
+  const game = gameData.games[0];
 
   return {
     props: {
@@ -85,7 +92,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       },
       upcomingGames: gamesMock,
       upcomingHighlight: highlightMock,
-      recommendedGames: gamesMock,
+      recommendedGames: gamesMapper(recommendedData.recommended.section.games),
     },
   };
 };
