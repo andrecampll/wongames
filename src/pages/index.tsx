@@ -1,26 +1,20 @@
-import { initializeApollo } from '../utils/apollo';
-import { QueryHome, QueryHomeVariables } from '../graphql/generated/QueryHome';
-import { QUERY_HOME } from '../graphql/queries/home';
-
+/* eslint-disable react-hooks/rules-of-hooks */
 import Home, { HomeTemplateProps } from '../templates/Home';
 import { bannerMapper, gamesMapper, highlightMapper } from '../utils/mappers';
+import { useHome } from '../hooks/pages/useHome';
 
 export default function Index(props: HomeTemplateProps) {
   return <Home {...props} />;
 }
 
 export async function getServerSideProps() {
-  const apolloClient = initializeApollo();
-  const TODAY = new Date().toISOString().slice(0, 10);
-
   const {
-    data: { banners, newGames, upcomingGames, freeGames, sections },
-  } = await apolloClient.query<QueryHome, QueryHomeVariables>({
-    query: QUERY_HOME,
-    variables: {
-      date: TODAY,
-    },
-  });
+    banners,
+    newGames,
+    sections,
+    upcomingGames,
+    freeGames,
+  } = await useHome();
 
   return {
     props: {
