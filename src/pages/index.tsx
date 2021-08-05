@@ -4,7 +4,6 @@ import { QUERY_HOME } from '../graphql/queries/home';
 
 import Home, { HomeTemplateProps } from '../templates/Home';
 
-import gamesMock from '../components/GameCardSlider/mock';
 import highlightMock from '../components/Highlight/mock';
 
 export default function Index(props: HomeTemplateProps) {
@@ -15,7 +14,7 @@ export async function getServerSideProps() {
   const apolloClient = initializeApollo();
 
   const {
-    data: { banners, newGames, upcomingGames, freeGames },
+    data: { banners, newGames, upcomingGames, freeGames, sections },
   } = await apolloClient.query<QueryHome>({ query: QUERY_HOME });
 
   return {
@@ -42,8 +41,20 @@ export async function getServerSideProps() {
           : 'https://i.stack.imgur.com/y9DpT.jpg',
         price,
       })),
+      newGamesTitle: sections.newGames.title,
       mostPopularHighlight: highlightMock,
-      mostPopularGames: gamesMock,
+      mostPopularGames: sections.popularGames.games.map(
+        ({ name, slug, developers, cover, price }) => ({
+          title: name,
+          slug,
+          developer: developers[0].name,
+          image: cover?.url
+            ? `http://localhost:1337${cover?.url}`
+            : 'https://i.stack.imgur.com/y9DpT.jpg',
+          price,
+        }),
+      ),
+      mostPopularGamesTitle: sections.popularGames.title,
       upcomingGames: upcomingGames.map(
         ({ name, slug, developers, cover, price }) => ({
           title: name,
@@ -55,7 +66,9 @@ export async function getServerSideProps() {
           price,
         }),
       ),
+      upcomingGamesTitle: sections.upcomingGames.title,
       upcomingHighlight: highlightMock,
+      freeGamesTitle: sections.freeGames.title,
       freeGames: freeGames.map(({ name, slug, developers, cover, price }) => ({
         title: name,
         slug,
