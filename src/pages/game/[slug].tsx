@@ -3,7 +3,7 @@ import { GetStaticProps } from 'next';
 import { initializeApollo } from '../../utils/apollo';
 import { QueryRecommended } from '../../graphql/generated/QueryRecommended';
 import { QUERY_RECOMMENDED } from '../../graphql/queries/recommended';
-import { gamesMapper } from '../../utils/mappers';
+import { gamesMapper, highlightMapper } from '../../utils/mappers';
 import {
   QueryGames,
   QueryGamesVariables,
@@ -16,8 +16,11 @@ import { QUERY_GAMES, QUERY_GAMES_BY_SLUG } from '../../graphql/queries/games';
 
 import Game, { GameTemplateProps } from '../../templates/Game';
 
-import gamesMock from '../../components/GameCardSlider/mock';
-import highlightMock from '../../components/Highlight/mock';
+import {
+  QueryUpcoming,
+  QueryUpcomingVariables,
+} from '../../graphql/generated/QueryUpcoming';
+import { QUERY_UPCOMING } from '../../graphql/queries/upcoming';
 
 const apolloClient = initializeApollo();
 
@@ -68,6 +71,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const game = gameData.games[0];
 
+  const TODAY = new Date().toISOString().slice(0, 10);
+
+  const { data: upcomingData } = await apolloClient.query<
+    QueryUpcoming,
+    QueryUpcomingVariables
+  >({ query: QUERY_UPCOMING, variables: { date: TODAY } });
+
   return {
     props: {
       revalidate: 60,
@@ -90,8 +100,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         rating: game.rating,
         genres: game.categories.map(category => category.name),
       },
-      upcomingGames: gamesMock,
-      upcomingHighlight: highlightMock,
+      upcomingTitle: upcomingData.showcase?.upcomingGames?.title,
+      upcomingGames: gamesMapper(upcomingData.upcomingGames),
+      upcomingHighlight: highlightMapper(
+        upcomingData.showcase?.upcomingGames?.highlight,
+      ),
       recommendedGames: gamesMapper(recommendedData.recommended.section.games),
     },
   };
