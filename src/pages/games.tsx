@@ -9,19 +9,13 @@ export default function GamesPage(props: GamesTemplateProps) {
 }
 
 export async function getStaticProps() {
-  const { data } = await useGames();
+  const { apolloClient } = await useGames();
 
   return {
     props: {
       revalidate: 60,
-      games: data.games.map(game => ({
-        title: game.name,
-        slug: game.slug,
-        developer: game.developers[0].name,
-        image: game.cover ? `http://localhost:1337${game.cover.url}` : '',
-        price: game.price,
-      })),
       filterItems: filterItemsMock,
+      initialApolloState: apolloClient.cache.extract(),
     },
   };
 }
