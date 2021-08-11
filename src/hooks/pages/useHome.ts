@@ -5,9 +5,9 @@ import {
 import { QUERY_HOME } from '../../graphql/queries/home';
 import { initializeApollo } from '../../utils/apollo';
 
-const apolloClient = initializeApollo();
-
 export const useHome = async () => {
+  const apolloClient = initializeApollo();
+
   const TODAY = new Date().toISOString().slice(0, 10);
 
   const {
