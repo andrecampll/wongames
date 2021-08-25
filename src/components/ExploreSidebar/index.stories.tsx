@@ -8,6 +8,7 @@ export default {
   component: ExploreSidebar,
   args: {
     items,
+    onFilter: () => 'filter',
   },
   parameters: {
     layout: 'fullscreen',
