@@ -4,6 +4,7 @@ import { ParsedUrlQueryInput } from 'querystring';
 import { useQueryGames } from '../../graphql/queries/games';
 
 import Base from '../Base';
+import Empty from '../../components/Empty';
 import ExploreSidebar, { ItemProps } from '../../components/ExploreSidebar';
 import GameCard from '../../components/GameCard';
 import { Grid } from '../../components/Grid';
@@ -52,22 +53,30 @@ const Games = ({ filterItems }: GamesTemplateProps) => {
           <p>Loading...</p>
         ) : (
           <section>
-            <Grid>
-              {data?.games.map(({ name, slug, developers, cover, price }) => (
-                <GameCard
-                  key={slug}
-                  title={name}
-                  slug={slug}
-                  developer={developers[0].name}
-                  image={
-                    cover?.url
-                      ? `http://localhost:1337${cover?.url}`
-                      : 'https://i.stack.imgur.com/y9DpT.jpg'
-                  }
-                  price={price}
-                />
-              ))}
-            </Grid>
+            {data?.games.length ? (
+              <Grid>
+                {data?.games.map(({ name, slug, developers, cover, price }) => (
+                  <GameCard
+                    key={slug}
+                    title={name}
+                    slug={slug}
+                    developer={developers[0].name}
+                    image={
+                      cover?.url
+                        ? `http://localhost:1337${cover?.url}`
+                        : 'https://i.stack.imgur.com/y9DpT.jpg'
+                    }
+                    price={price}
+                  />
+                ))}
+              </Grid>
+            ) : (
+              <Empty
+                title=":("
+                description="We didn't find any games with this filter"
+                hasLink
+              />
+            )}
 
             <ShowMore role="button" onClick={handleShowMore}>
               <p>Show More</p>

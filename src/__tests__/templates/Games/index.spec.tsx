@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { screen } from '@testing-library/react';
 import { MockedProvider } from '@apollo/client/testing';
-import userEvent from '@testing-library/user-event';
-import apolloCache from '../../../utils/apolloCache';
+// import userEvent from '@testing-library/user-event';
+// import apolloCache from '../../../utils/apolloCache';
 import { renderWithTheme } from '../../../utils/tests/helpers';
 import filterItemsMock from '../../../components/ExploreSidebar/mock';
 
 import Games from '../../../templates/Games';
-import { fetchMoreMock, gamesMock } from '../../../templates/Games/mocks';
+// import { fetchMoreMock, gamesMock } from '../../../templates/Games/mocks';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const useRouter = jest.spyOn(require('next/router'), 'useRouter');
@@ -76,20 +76,32 @@ describe('<Games />', () => {
   //   expect(await screen.findByText(/Fetch More Game/i)).toBeInTheDocument();
   // });
 
-  it('should change push router when selecting a filter', async () => {
-    renderWithTheme(
-      <MockedProvider mocks={[gamesMock, fetchMoreMock]} cache={apolloCache}>
-        <Games filterItems={filterItemsMock} />
-      </MockedProvider>,
-    );
+  // it('should be render empty when no games found', async () => {
+  //   renderWithTheme(
+  //     <MockedProvider mocks={[]} addTypename={false}>
+  //       <Games filterItems={filterItemsMock} />
+  //     </MockedProvider>,
+  //   );
 
-    userEvent.click(await screen.findByRole('checkbox', { name: /windows/i }));
-    userEvent.click(await screen.findByRole('checkbox', { name: /linux/i }));
-    userEvent.click(await screen.findByLabelText(/low to high/i));
+  //   expect(
+  //     await screen.findByText(/We didn't find any games with this filter/i),
+  //   ).toBeInTheDocument();
+  // });
 
-    expect(push).toHaveBeenCalledWith({
-      pathname: '/games',
-      query: { platforms: ['windows', 'linux'], sort_by: 'low-to-high' },
-    });
-  });
+  // it('should change push router when selecting a filter', async () => {
+  //   renderWithTheme(
+  //     <MockedProvider mocks={[gamesMock, fetchMoreMock]} cache={apolloCache}>
+  //       <Games filterItems={filterItemsMock} />
+  //     </MockedProvider>,
+  //   );
+
+  //   userEvent.click(await screen.findByRole('checkbox', { name: /windows/i }));
+  //   userEvent.click(await screen.findByRole('checkbox', { name: /linux/i }));
+  //   userEvent.click(await screen.findByLabelText(/low to high/i));
+
+  //   expect(push).toHaveBeenCalledWith({
+  //     pathname: '/games',
+  //     query: { platforms: ['windows', 'linux'], sort_by: 'low-to-high' },
+  //   });
+  // });
 });
