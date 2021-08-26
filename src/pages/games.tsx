@@ -1,20 +1,22 @@
 /* eslint-disable react-hooks/rules-of-hooks */
+import { GetServerSidePropsContext } from 'next';
 import { useGames } from '../hooks/useGames';
 
 import GamesTemplate, { GamesTemplateProps } from '../templates/Games';
-import filterItemsMock from '../components/ExploreSidebar/mock';
 
 export default function GamesPage(props: GamesTemplateProps) {
   return <GamesTemplate {...props} />;
 }
 
-export async function getStaticProps() {
-  const { apolloClient } = await useGames();
+export async function getServerSideProps({ query }: GetServerSidePropsContext) {
+  const { apolloClient, filterItems } = await useGames({
+    query,
+  });
 
   return {
     props: {
       revalidate: 60,
-      filterItems: filterItemsMock,
+      filterItems,
       initialApolloState: apolloClient.cache.extract(),
     },
   };
