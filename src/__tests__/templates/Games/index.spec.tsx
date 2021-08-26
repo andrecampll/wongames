@@ -7,7 +7,11 @@ import { renderWithTheme } from '../../../utils/tests/helpers';
 import filterItemsMock from '../../../components/ExploreSidebar/mock';
 
 import Games from '../../../templates/Games';
-// import { fetchMoreMock, gamesMock } from '../../../templates/Games/mocks';
+import {
+  // fetchMoreMock,
+  // gamesMock,
+  noGamesMock,
+} from '../../../templates/Games/mocks';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const useRouter = jest.spyOn(require('next/router'), 'useRouter');
@@ -76,13 +80,13 @@ describe('<Games />', () => {
   //   expect(await screen.findByText(/Fetch More Game/i)).toBeInTheDocument();
   // });
 
-  // it('should be render empty when no games found', async () => {
-  //   renderWithTheme(
-  //     <MockedProvider mocks={[]} addTypename={false}>
-  //       <Games filterItems={filterItemsMock} />
-  //     </MockedProvider>,
-  //   );
-
+  it('should be render empty when no games found', async () => {
+    renderWithTheme(
+      <MockedProvider mocks={[noGamesMock]} addTypename={false}>
+        <Games filterItems={filterItemsMock} />
+      </MockedProvider>,
+    );
+  });
   //   expect(
   //     await screen.findByText(/We didn't find any games with this filter/i),
   //   ).toBeInTheDocument();
