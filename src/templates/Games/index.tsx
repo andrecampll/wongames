@@ -9,7 +9,7 @@ import ExploreSidebar, { ItemProps } from '../../components/ExploreSidebar';
 import GameCard from '../../components/GameCard';
 import { Grid } from '../../components/Grid';
 
-import { Main, ShowMore } from './styles';
+import { Main, ShowMore, ShowMoreButton, ShowMoreLoading } from './styles';
 import {
   parseQueryStringToFilter,
   parseQueryStringToWhere,
@@ -23,6 +23,7 @@ const Games = ({ filterItems }: GamesTemplateProps) => {
   const { push, query } = useRouter();
 
   const { data, loading, fetchMore } = useQueryGames({
+    notifyOnNetworkStatusChange: true,
     variables: {
       limit: 15,
       where: parseQueryStringToWhere({ queryString: query, filterItems }),
@@ -49,11 +50,9 @@ const Games = ({ filterItems }: GamesTemplateProps) => {
           onFilter={handleFilter}
         />
 
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
-          <section>
-            {data?.games.length ? (
+        <section>
+          {data?.games.length ? (
+            <>
               <Grid>
                 {data?.games.map(({ name, slug, developers, cover, price }) => (
                   <GameCard
@@ -70,20 +69,29 @@ const Games = ({ filterItems }: GamesTemplateProps) => {
                   />
                 ))}
               </Grid>
-            ) : (
-              <Empty
-                title=":("
-                description="We didn't find any games with this filter"
-                hasLink
-              />
-            )}
 
-            <ShowMore role="button" onClick={handleShowMore}>
-              <p>Show More</p>
-              <ArrowDown size={35} />
-            </ShowMore>
-          </section>
-        )}
+              <ShowMore>
+                {loading ? (
+                  <ShowMoreLoading
+                    src="/img/dots.svg"
+                    alt="Loading more games..."
+                  />
+                ) : (
+                  <ShowMoreButton role="button" onClick={handleShowMore}>
+                    <p>Show More</p>
+                    <ArrowDown size={35} />
+                  </ShowMoreButton>
+                )}
+              </ShowMore>
+            </>
+          ) : (
+            <Empty
+              title=":("
+              description="We didn't find any games with this filter"
+              hasLink
+            />
+          )}
+        </section>
       </Main>
     </Base>
   );
