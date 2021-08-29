@@ -8,6 +8,19 @@ export const Title = styled.div`
     display: flex;
     align-items: center;
     padding-right: 2.4rem;
+    z-index: ${theme.layers.alwaysOnTop};
+  `}
+`;
+
+export const Overlay = styled.div`
+  ${({ theme }) => css`
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: ${theme.layers.overlay};
   `}
 `;
 
@@ -18,6 +31,7 @@ export const Content = styled.div`
     background: ${theme.colors.white};
     color: ${theme.colors.black};
     margin-top: ${theme.spacings.small};
+    z-index: ${theme.layers.alwaysOnTop};
     position: absolute;
     right: 0;
     &::before {
@@ -54,7 +68,7 @@ export const Wrapper = styled.div<WrapperProps>`
     position: relative;
     width: max-content;
 
-    ${Content} {
+    ${Content}, ${Overlay} {
       transition: transform 0.2s ease-in, opacity ${theme.transition.default};
 
       ${isOpen && wrapperModifiers.open()}

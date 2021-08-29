@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Wrapper, Title, Content } from './styles';
+import { Wrapper, Title, Content, Overlay } from './styles';
 
 export type DropdownProps = {
   title: React.ReactNode;
@@ -15,6 +15,7 @@ const Dropdown = ({ title, children }: DropdownProps) => {
       <Title onClick={() => setIsOpen(!isOpen)}>{title}</Title>
 
       <Content aria-hidden={!isOpen}>{children}</Content>
+      <Overlay aria-hidden={!isOpen} onClick={() => setIsOpen(!isOpen)} />
     </Wrapper>
   );
 };
