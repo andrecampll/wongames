@@ -1,5 +1,8 @@
+import { MockedProvider } from '@apollo/client/testing';
 import { renderHook } from '@testing-library/react-hooks';
 import { setStorageItem } from '../../utils/localStorage';
+
+import { cartItems, gamesMock } from '../../hooks/cart/mock';
 
 import {
   useCart,
@@ -8,15 +11,21 @@ import {
 } from '../../hooks/cart/useCart';
 
 describe('useCart', () => {
-  it('should return items and its info if there are any items in the cart', () => {
+  it('should return items and its info if there are any items in the cart', async () => {
     const wrapper = ({ children }: CartProviderProps) => (
-      <CartProvider>{children}</CartProvider>
+      <MockedProvider mocks={[gamesMock]}>
+        <CartProvider>{children}</CartProvider>
+      </MockedProvider>
     );
 
     setStorageItem('cartItems', ['1', '2']);
 
-    const { result } = renderHook(() => useCart(), { wrapper });
+    const { result, waitForNextUpdate } = renderHook(() => useCart(), {
+      wrapper,
+    });
 
-    expect(result.current.items).toStrictEqual(['1', '2']);
+    await waitForNextUpdate();
+
+    expect(result.current.items).toStrictEqual(cartItems);
   });
 });
