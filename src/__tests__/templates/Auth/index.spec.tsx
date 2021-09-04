@@ -1,10 +1,10 @@
 import { screen } from '@testing-library/react';
-import { renderWithTheme } from '../../../utils/tests/helpers';
+import { render } from '../../../utils/test-utils';
 import Auth from '../../../templates/Auth';
 
 describe('Auth', () => {
   it('should be able to render logos, title, footer and children', () => {
-    renderWithTheme(
+    render(
       <Auth title="Sign In">
         <input type="text" />
       </Auth>,

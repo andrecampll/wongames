@@ -3,7 +3,7 @@ import 'match-media-mock';
 import { screen } from '@testing-library/react';
 import gamesMock from '../../../components/GameCardSlider/mock';
 import highlightMock from '../../../components/Highlight/mock';
-import { renderWithTheme } from '../../../utils/tests/helpers';
+import { render } from '../../../utils/test-utils';
 
 import Wishlist, { WishlistTemplateProps } from '../../../templates/Wishlist';
 
@@ -22,7 +22,7 @@ jest.mock('components/Showcase', () => ({
 
 describe('Wishlist', () => {
   it('should be able to render', () => {
-    renderWithTheme(<Wishlist {...props} />);
+    render(<Wishlist {...props} />);
 
     expect(
       screen.getByRole('heading', {
@@ -35,7 +35,7 @@ describe('Wishlist', () => {
   });
 
   it('should be able to render empty when there are no games', () => {
-    renderWithTheme(
+    render(
       <Wishlist
         recommendedGames={gamesMock}
         recommendedHighlist={highlightMock}

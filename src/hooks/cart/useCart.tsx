@@ -42,7 +42,9 @@ export const CartContextDefaultValues = {
   loading: false,
 };
 
-const CartContext = createContext<CartContextDTO>(CartContextDefaultValues);
+export const CartContext = createContext<CartContextDTO>(
+  CartContextDefaultValues,
+);
 
 export type Props = {
   children: ReactNode;

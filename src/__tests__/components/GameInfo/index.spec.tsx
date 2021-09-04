@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { renderWithTheme } from '../../../utils/tests/helpers';
+import { render } from '../../../utils/test-utils';
 import GameInfo from '../../../components/GameInfo';
 
 const props = {
@@ -10,7 +10,7 @@ const props = {
 
 describe('GameInfo', () => {
   it('should be able to render game information', () => {
-    const { container } = renderWithTheme(<GameInfo {...props} />);
+    const { container } = render(<GameInfo {...props} />);
 
     expect(
       screen.getByRole('heading', {
@@ -25,7 +25,7 @@ describe('GameInfo', () => {
   });
 
   it('should be able to render', () => {
-    renderWithTheme(<GameInfo {...props} />);
+    render(<GameInfo {...props} />);
 
     expect(
       screen.getByRole('button', {

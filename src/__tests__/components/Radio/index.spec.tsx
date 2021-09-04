@@ -1,11 +1,11 @@
 import { screen, waitFor } from '@testing-library/dom';
 import userEvent from '@testing-library/user-event';
-import { renderWithTheme } from '../../../utils/tests/helpers';
+import { render } from '../../../utils/test-utils';
 import Radio from '../../../components/Radio';
 
 describe('Radio', () => {
   it('should be able to render with a label', () => {
-    renderWithTheme(<Radio label="radio label" labelFor="check" />);
+    render(<Radio label="radio label" labelFor="check" />);
 
     expect(screen.getByRole('radio')).toBeInTheDocument();
     expect(screen.getByLabelText(/radio label/i)).toBeInTheDocument();
@@ -13,15 +13,13 @@ describe('Radio', () => {
   });
 
   it('should not be able to render with a label', () => {
-    renderWithTheme(<Radio />);
+    render(<Radio />);
 
     expect(screen.queryByLabelText('Radio')).not.toBeInTheDocument();
   });
 
   it('should be able to render with black label', () => {
-    renderWithTheme(
-      <Radio label="radio label" labelFor="check" labelColor="black" />,
-    );
+    render(<Radio label="radio label" labelFor="check" labelColor="black" />);
 
     expect(screen.getByText(/radio label/i)).toHaveStyle({
       color: '#030517',
@@ -31,7 +29,7 @@ describe('Radio', () => {
   it('should be able to dispatch onCheck when status changes', async () => {
     const onCheck = jest.fn();
 
-    renderWithTheme(
+    render(
       <Radio
         label="radio label"
         labelFor="check"
@@ -53,7 +51,7 @@ describe('Radio', () => {
   });
 
   it('should be able to focus in Radio', async () => {
-    renderWithTheme(<Radio label="radio label" labelFor="check" />);
+    render(<Radio label="radio label" labelFor="check" />);
 
     expect(document.body).toHaveFocus();
 
