@@ -30,10 +30,6 @@ Jest 🧪 <br />
 Cypress 🧪 <br />
 React Testing Library 🐙 <br />
 
-
-# Result 🤓
-🚧 Project under development 🚧
-
 # Storybook 📕
 To see all the components developed in this application in isolation, you can run <code> yarn storybook</code> to open the Storybook at <br /> <code>https://localhost:6006/</code>
 
