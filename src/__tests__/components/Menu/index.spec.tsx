@@ -1,10 +1,10 @@
 import { fireEvent, screen } from '@testing-library/react';
 import Menu from '../../../components/Menu';
-import { renderWithTheme } from '../../../utils/tests/helpers';
+import { render } from '../../../utils/test-utils';
 
 describe('Menu', () => {
   it('should be able to render the menu', () => {
-    renderWithTheme(<Menu />);
+    render(<Menu />);
 
     expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/search/i)).toBeInTheDocument();
@@ -12,7 +12,7 @@ describe('Menu', () => {
   });
 
   it('should handle the open/close mobile menu', () => {
-    renderWithTheme(<Menu />);
+    render(<Menu />);
 
     const fullMenuElement = screen.getByRole('navigation', { hidden: true });
 
@@ -29,7 +29,7 @@ describe('Menu', () => {
   });
 
   it('should show box when logged out', () => {
-    renderWithTheme(<Menu />);
+    render(<Menu />);
 
     expect(screen.queryAllByText(/my profile/i)).toHaveLength(0);
     expect(screen.queryByText(/wishlist/i)).not.toBeInTheDocument();
@@ -39,7 +39,7 @@ describe('Menu', () => {
   });
 
   it('should show wishlist when logged in', () => {
-    renderWithTheme(<Menu username="johndoe" />);
+    render(<Menu username="johndoe" />);
 
     expect(screen.getAllByText(/my profile/i)).toHaveLength(2);
     expect(screen.getAllByText(/wishlist/i)).toHaveLength(2);

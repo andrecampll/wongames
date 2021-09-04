@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import Base from '../../../templates/Base';
-import { renderWithTheme } from '../../../utils/tests/helpers';
+import { render } from '../../../utils/test-utils';
 
 jest.mock('../../../components/Menu', () => {
   return {
@@ -22,7 +22,7 @@ jest.mock('../../../components/Footer', () => {
 
 describe('<Base />', () => {
   it('should render menu, footer and children', () => {
-    renderWithTheme(
+    render(
       <Base>
         <h1>Hello World</h1>
       </Base>,

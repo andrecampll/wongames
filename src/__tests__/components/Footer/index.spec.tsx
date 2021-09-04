@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { renderWithTheme } from '../../../utils/tests/helpers';
+import { render } from '../../../utils/test-utils';
 
 import Footer from '../../../components/Footer';
 
@@ -7,7 +7,7 @@ import 'jest-styled-components';
 
 describe('Footer', () => {
   it('should be able to render a 4 columns by default', () => {
-    const { container } = renderWithTheme(<Footer />);
+    const { container } = render(<Footer />);
 
     expect(
       screen.getByRole('heading', { name: /contact Us/i }),

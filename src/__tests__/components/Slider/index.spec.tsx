@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import 'match-media-mock';
 import { screen } from '@testing-library/react';
-import { renderWithTheme } from '../../../utils/tests/helpers';
+import { render } from '../../../utils/test-utils';
 
 import Slider from '../../../components/Slider';
 
@@ -9,7 +9,7 @@ import 'jest-styled-components';
 
 describe('Slider', () => {
   it('should be able to render children as slider item', () => {
-    const { container } = renderWithTheme(
+    const { container } = render(
       <Slider settings={{ slidesToScroll: 1, infinite: false }}>
         <p>Item 1</p>
         <p>Item 2</p>

@@ -6,7 +6,7 @@ import gamesMock from '../../../components/GameCardSlider/mock';
 import highlightMock from '../../../components/Highlight/mock';
 import itemsMock from '../../../components/CartList/mock';
 import cardsMock from '../../../components/PaymentOptions/mock';
-import { renderWithTheme } from '../../../utils/tests/helpers';
+import { render } from '../../../utils/test-utils';
 
 import Cart from '../../../templates/Cart';
 
@@ -55,7 +55,7 @@ jest.mock('components/Empty', () => ({
 
 describe('<Cart />', () => {
   it('should render sections', () => {
-    renderWithTheme(<Cart {...props} />);
+    render(<Cart {...props} />);
 
     expect(
       screen.getByRole('heading', { name: /my cart/i }),
@@ -67,7 +67,7 @@ describe('<Cart />', () => {
   });
 
   it('should render empty section if there are no items', () => {
-    renderWithTheme(<Cart {...props} items={[]} />);
+    render(<Cart {...props} items={[]} />);
 
     expect(screen.getByTestId('Mock Empty')).toBeInTheDocument();
   });

@@ -1,10 +1,10 @@
-import { renderWithTheme } from '../../../utils/tests/helpers';
+import { render } from '../../../utils/test-utils';
 
 import { FormWrapper, FormLink } from '../../../components/Form';
 
 describe('Form', () => {
   it('should be able to render', () => {
-    const { container } = renderWithTheme(
+    const { container } = render(
       <FormWrapper>
         <FormLink>
           My nice <a href="#">link</a>
@@ -29,7 +29,6 @@ describe('Form', () => {
               </a>
             </div>
           </div>
-           
         </div>
       </body>
     `);

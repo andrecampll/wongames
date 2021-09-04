@@ -1,14 +1,14 @@
 /* eslint-disable import/no-unresolved */
 import 'match-media-mock';
 import { fireEvent, screen } from '@testing-library/react';
-import { renderWithTheme } from '../../../utils/tests/helpers';
+import { render } from '../../../utils/test-utils';
 
 import items from '../../../components/Gallery/mock';
 import Gallery from '../../../components/Gallery';
 
 describe('<Gallery />', () => {
   it('should be able to render thumbnails as buttons', () => {
-    renderWithTheme(<Gallery items={items.slice(0, 2)} />);
+    render(<Gallery items={items.slice(0, 2)} />);
 
     expect(
       screen.getByRole('button', { name: /thumb - gallery image 1/i }),
@@ -20,7 +20,7 @@ describe('<Gallery />', () => {
   });
 
   it('should be able to render open modal when the user click at the modal', () => {
-    renderWithTheme(<Gallery items={items.slice(0, 2)} />);
+    render(<Gallery items={items.slice(0, 2)} />);
 
     const modal = screen.getByLabelText('modal');
 
@@ -35,7 +35,7 @@ describe('<Gallery />', () => {
   });
 
   it('should be able to open modal with selected image', async () => {
-    renderWithTheme(<Gallery items={items.slice(0, 2)} />);
+    render(<Gallery items={items.slice(0, 2)} />);
 
     fireEvent.click(
       screen.getByRole('button', { name: /thumb - gallery image 2/i }),
@@ -46,7 +46,7 @@ describe('<Gallery />', () => {
   });
 
   it('should be able to render close modal when overlay or button clicked', () => {
-    renderWithTheme(<Gallery items={items.slice(0, 2)} />);
+    render(<Gallery items={items.slice(0, 2)} />);
 
     const modal = screen.getByLabelText('modal');
 
@@ -61,9 +61,7 @@ describe('<Gallery />', () => {
   });
 
   it('should be able to render close modal when overlay or button clicked', () => {
-    const { container } = renderWithTheme(
-      <Gallery items={items.slice(0, 2)} />,
-    );
+    const { container } = render(<Gallery items={items.slice(0, 2)} />);
 
     const modal = screen.getByLabelText('modal');
 

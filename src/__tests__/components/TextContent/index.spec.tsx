@@ -3,7 +3,7 @@ import 'match-media-mock';
 import { screen } from '@testing-library/react';
 import TextContent, { TextContentProps } from '../../../components/TextContent';
 
-import { renderWithTheme } from '../../../utils/tests/helpers';
+import { render } from '../../../utils/test-utils';
 
 import 'jest-styled-components';
 
@@ -14,7 +14,7 @@ const props: TextContentProps = {
 
 describe('<TextContent/>', () => {
   it('should be able to render the title and content', () => {
-    renderWithTheme(<TextContent {...props} />);
+    render(<TextContent {...props} />);
 
     expect(
       screen.getByRole('heading', { name: /description/i }),
@@ -26,7 +26,7 @@ describe('<TextContent/>', () => {
   });
 
   it('should be able to render without title', () => {
-    renderWithTheme(<TextContent content={props.content} />);
+    render(<TextContent content={props.content} />);
 
     expect(
       screen.queryByRole('heading', { name: /description/i }),
@@ -34,7 +34,7 @@ describe('<TextContent/>', () => {
   });
 
   it('should be able to render dark-themed on mobile', () => {
-    renderWithTheme(<TextContent {...props} />);
+    render(<TextContent {...props} />);
 
     const wrapper = screen.getByRole('heading', { name: /description/i })
       .parentElement;

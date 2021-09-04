@@ -31,7 +31,6 @@ exports[`Empty should be able to render 1`] = `
         </span>
       </a>
     </div>
-     
   </div>
 </body>
 `;

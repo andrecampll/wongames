@@ -1,12 +1,12 @@
 import 'jest-styled-components';
 import theme from '../../../styles/theme';
-import { renderWithTheme } from '../../../utils/tests/helpers';
+import { render } from '../../../utils/test-utils';
 
 import { Container } from '../../../components/Container';
 
 describe('Container', () => {
   it('should be able to render', () => {
-    const { container } = renderWithTheme(
+    const { container } = render(
       <Container>
         <span>wongames</span>
       </Container>,
