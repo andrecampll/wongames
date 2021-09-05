@@ -65,13 +65,13 @@ exports[`CartList should be able to render 1`] = `
     </div>
   </div>
   <div
-    class="sc-bqyKva coqIZJ"
+    class="sc-kstrdz kdCJOz"
   >
     <span>
       Total:
     </span>
     <span
-      class="sc-kstrdz cGmhud"
+      class="sc-hBEYos cjSLUH"
     >
       R$ 330,00
     </span>

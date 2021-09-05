@@ -4,15 +4,24 @@ import { useCart } from '../../hooks/cart/useCart';
 import Button from '../Button';
 import Empty from '../Empty';
 import GameItem from '../GameItem';
+import Loader from '../Loader';
 
-import { Wrapper, Footer, Total } from './styles';
+import { Wrapper, Footer, Total, Loading } from './styles';
 
 export type CartListProps = {
   hasButton?: boolean;
 };
 
 const CartList = ({ hasButton = false }: CartListProps) => {
-  const { items, total } = useCart();
+  const { items, total, loading } = useCart();
+
+  if (loading) {
+    return (
+      <Loading>
+        <Loader />
+      </Loading>
+    );
+  }
 
   return (
     <Wrapper isEmpty={!items.length}>

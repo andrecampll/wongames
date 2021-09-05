@@ -23,6 +23,17 @@ describe('CartList', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
+  it('should render loading', () => {
+    const cartProviderProps = {
+      ...CartContextDefaultValues,
+      loading: true,
+    };
+
+    render(<CartList hasButton />, { cartProviderProps });
+
+    expect(screen.getByTitle(/loading/i)).toBeInTheDocument();
+  });
+
   it('should be able the button', () => {
     const cartProviderProps = {
       ...CartContextDefaultValues,
