@@ -1,43 +1,47 @@
 import Link from 'next/link';
+import { useCart } from '../../hooks/cart/useCart';
+
 import Button from '../Button';
 import Empty from '../Empty';
-import GameItem, { GameItemProps } from '../GameItem';
+import GameItem from '../GameItem';
 
 import { Wrapper, Footer, Total } from './styles';
 
 export type CartListProps = {
-  items?: GameItemProps[];
-  total?: string;
   hasButton?: boolean;
 };
 
-const CartList = ({ items = [], total, hasButton = false }: CartListProps) => (
-  <Wrapper isEmpty={!items.length}>
-    {items.length ? (
-      <>
-        {items.map(item => (
-          <GameItem key={item.title} {...item} />
-        ))}
+const CartList = ({ hasButton = false }: CartListProps) => {
+  const { items, total } = useCart();
 
-        <Footer>
-          {!hasButton && <span>Total:</span>}
-          <Total>{total}</Total>
+  return (
+    <Wrapper isEmpty={!items.length}>
+      {items.length ? (
+        <>
+          {items.map(item => (
+            <GameItem key={item.title} {...item} />
+          ))}
 
-          {hasButton && (
-            <Link href="/cart">
-              <Button as="a">Buy it now</Button>
-            </Link>
-          )}
-        </Footer>
-      </>
-    ) : (
-      <Empty
-        title="Your cart is empty"
-        description="Go back to the store and explore great games and offers."
-        hasLink
-      />
-    )}
-  </Wrapper>
-);
+          <Footer>
+            {!hasButton && <span>Total:</span>}
+            <Total>{total}</Total>
+
+            {hasButton && (
+              <Link href="/cart">
+                <Button as="a">Buy it now</Button>
+              </Link>
+            )}
+          </Footer>
+        </>
+      ) : (
+        <Empty
+          title="Your cart is empty"
+          description="Go back to the store and explore great games and offers."
+          hasLink
+        />
+      )}
+    </Wrapper>
+  );
+};
 
 export default CartList;
