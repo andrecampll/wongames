@@ -1,16 +1,25 @@
 import { ThemeProvider } from 'styled-components';
+import { CartContext, CartContextDefaultValues } from '../src/hooks/cart/useCart'
 import GlobalStyles from 'styles/GlobalStyles';
-import theme from 'styles/theme';
+import theme from '../src/styles/theme';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
 }
 
 export const decorators = [
-  (Story) => (
+  (Story, context) => (
     <ThemeProvider theme={theme} >
-      <GlobalStyles removeBg />
-      <Story />
+      <CartContext.Provider
+        value={{
+          ...CartContextDefaultValues,
+          ...(context?.args?.cartContextValue || {}),
+          ...context.args
+        }}
+      >
+        <GlobalStyles removeBg />
+        <Story />
+      </CartContext.Provider>
     </ThemeProvider>
   )
 ]
