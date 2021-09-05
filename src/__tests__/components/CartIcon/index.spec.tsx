@@ -1,6 +1,7 @@
 import { screen } from '@testing-library/react';
 import { render } from '../../../utils/test-utils';
 import CartIcon from '../../../components/CartIcon';
+import { CartContextDefaultValues } from '../../../hooks/cart/useCart';
 
 describe('CartIcon', () => {
   it('should be able to render without badge', () => {
@@ -11,16 +12,14 @@ describe('CartIcon', () => {
   });
 
   it('should be able to render with badge and items quantity', () => {
-    render(<CartIcon quantity={12} />);
+    render(<CartIcon />, {
+      cartProviderProps: {
+        ...CartContextDefaultValues,
+        quantity: 12,
+      },
+    });
 
     expect(screen.queryByLabelText(/cart items/i)).toBeInTheDocument();
     expect(screen.getByText('12')).toBeInTheDocument();
-  });
-
-  it('should render with badge only if has positive numbers', () => {
-    render(<CartIcon quantity={-1} />);
-
-    expect(screen.queryByLabelText(/cart items/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/-1/)).not.toBeInTheDocument();
   });
 });
