@@ -12,3 +12,16 @@ export const Content = styled.div`
     `}
   `}
 `;
+
+export const Text = styled.p`
+  ${({ theme }) => css`
+    color: ${theme.colors.gray};
+    a {
+      color: ${theme.colors.primary};
+      text-decoration: none;
+    }
+    svg {
+      color: ${theme.colors.primary};
+    }
+  `}
+`;

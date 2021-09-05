@@ -60,20 +60,23 @@ const Games = ({ filterItems }: GamesTemplateProps) => {
           {data?.games.length ? (
             <>
               <Grid>
-                {data?.games.map(({ name, slug, developers, cover, price }) => (
-                  <GameCard
-                    key={slug}
-                    title={name}
-                    slug={slug}
-                    developer={developers[0].name}
-                    image={
-                      cover?.url
-                        ? `http://localhost:1337${cover?.url}`
-                        : 'https://i.stack.imgur.com/y9DpT.jpg'
-                    }
-                    price={price}
-                  />
-                ))}
+                {data?.games.map(
+                  ({ id, name, slug, developers, cover, price }) => (
+                    <GameCard
+                      id={id}
+                      key={slug}
+                      title={name}
+                      slug={slug}
+                      developer={developers[0].name}
+                      image={
+                        cover?.url
+                          ? `http://localhost:1337${cover?.url}`
+                          : 'https://i.stack.imgur.com/y9DpT.jpg'
+                      }
+                      price={price}
+                    />
+                  ),
+                )}
               </Grid>
 
               {hasMoreGames && (
