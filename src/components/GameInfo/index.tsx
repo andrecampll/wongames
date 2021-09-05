@@ -1,21 +1,20 @@
-import {
-  AddShoppingCart,
-  FavoriteBorder,
-} from '@styled-icons/material-outlined';
+import { FavoriteBorder } from '@styled-icons/material-outlined';
 
 import Heading from '../Heading';
 import Ribbon from '../Ribbon';
 import Button from '../Button';
 import { Wrapper, Description, ButtonsWrapper } from './styles';
 import { formatPrice } from '../../utils/format-price';
+import { CartButton } from '../CartButton';
 
 export type GameInfoProps = {
+  id: string;
   title: string;
   description: string;
   price: number;
 };
 
-const GameInfo = ({ title, description, price }: GameInfoProps) => (
+const GameInfo = ({ id, title, description, price }: GameInfoProps) => (
   <Wrapper>
     <Heading color="black" lineBottom>
       {title}
@@ -26,9 +25,7 @@ const GameInfo = ({ title, description, price }: GameInfoProps) => (
     <Description>{description}</Description>
 
     <ButtonsWrapper>
-      <Button icon={<AddShoppingCart />} size="large">
-        Add to cart
-      </Button>
+      <CartButton id={id} size="large" hasText />
       <Button icon={<FavoriteBorder />} size="large" minimal>
         Wishlist
       </Button>
