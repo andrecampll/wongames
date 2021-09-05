@@ -3,14 +3,11 @@ import styled, { css, DefaultTheme } from 'styled-components';
 
 import * as ButtonStyles from '../Button/styles';
 
-export const Wrapper = styled.main`
-  ${({ theme }) => css`
-    background: ${theme.colors.white};
-  `}
-`;
+export const Wrapper = styled.main``;
 
 export const Body = styled.div`
   ${({ theme }) => css`
+    background: ${theme.colors.white};
     padding: ${theme.spacings.small};
   `}
 `;

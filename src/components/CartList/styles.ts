@@ -34,6 +34,11 @@ export const Wrapper = styled.main<WrapperProps>`
   `}
 `;
 
+export const GamesList = styled.div`
+  max-height: 40rem;
+  overflow-y: auto;
+`;
+
 export const Loading = styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.white};
