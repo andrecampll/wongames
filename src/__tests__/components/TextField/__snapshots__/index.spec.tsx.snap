@@ -34,7 +34,7 @@ exports[`<TextField /> Renders with error 1`] = `
       </svg>
     </div>
     <input
-      class="sc-gsTCUz mKjgu"
+      class="sc-gsTCUz gcCRQr"
       type="text"
       value=""
     />

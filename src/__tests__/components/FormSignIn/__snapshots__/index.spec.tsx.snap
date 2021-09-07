@@ -32,7 +32,7 @@ exports[`FormSignIn should be able to render the Form 1`] = `
           </svg>
         </div>
         <input
-          class="sc-dlfnbm dnQXQN"
+          class="sc-dlfnbm gxVjuQ"
           name="email"
           placeholder="E-mail"
           type="email"
@@ -74,7 +74,7 @@ exports[`FormSignIn should be able to render the Form 1`] = `
           </svg>
         </div>
         <input
-          class="sc-dlfnbm dnQXQN"
+          class="sc-dlfnbm gxVjuQ"
           name="password"
           placeholder="Password"
           type="password"

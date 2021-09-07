@@ -4,7 +4,7 @@ import { useState, InputHTMLAttributes } from 'react';
 import { Wrapper, Label, InputWrapper, Input, Icon, Error } from './styles';
 
 export type TextFieldProps = {
-  onInput?: (value: string) => void;
+  onInputChange?: (value: string) => void;
   label?: string;
   initialValue?: string;
   icon?: JSX.Element;
@@ -17,7 +17,7 @@ const TextField = ({
   label,
   initialValue = '',
   iconPosition = 'left',
-  onInput,
+  onInputChange,
   name,
   icon,
   disabled = false,
@@ -30,7 +30,7 @@ const TextField = ({
     const newValue = e.currentTarget.value;
     setValue(newValue);
 
-    !!onInput && onInput(newValue);
+    !!onInputChange && onInputChange(newValue);
   };
 
   return (
