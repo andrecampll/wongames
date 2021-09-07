@@ -2,17 +2,17 @@
 
 exports[`<FormSignUp /> should render the form 1`] = `
 <div
-  class="sc-iBPRYJ knpBoJ"
+  class="sc-iBPRYJ hlxcom"
 >
   <form>
     <div
-      class="sc-gKsewC dycbEO"
+      class="sc-jSgupP eplsmf"
     >
       <div
-        class="sc-gsTCUz bNMdPI"
+        class="sc-bdfBwQ OPvhY"
       >
         <div
-          class="sc-eCssSg bppvqY"
+          class="sc-hKgILt Ddcon"
         >
           <svg
             aria-hidden="true"
@@ -32,7 +32,7 @@ exports[`<FormSignUp /> should render the form 1`] = `
           </svg>
         </div>
         <input
-          class="sc-dlfnbm gxVjuQ"
+          class="sc-gsTCUz gcCRQr"
           name="name"
           placeholder="Name"
           type="name"
@@ -41,13 +41,13 @@ exports[`<FormSignUp /> should render the form 1`] = `
       </div>
     </div>
     <div
-      class="sc-gKsewC dycbEO"
+      class="sc-jSgupP eplsmf"
     >
       <div
-        class="sc-gsTCUz bNMdPI"
+        class="sc-bdfBwQ OPvhY"
       >
         <div
-          class="sc-eCssSg bppvqY"
+          class="sc-hKgILt Ddcon"
         >
           <svg
             aria-hidden="true"
@@ -67,22 +67,22 @@ exports[`<FormSignUp /> should render the form 1`] = `
           </svg>
         </div>
         <input
-          class="sc-dlfnbm gxVjuQ"
+          class="sc-gsTCUz gcCRQr"
           name="email"
           placeholder="Email"
-          type="email"
+          type="text"
           value=""
         />
       </div>
     </div>
     <div
-      class="sc-gKsewC dycbEO"
+      class="sc-jSgupP eplsmf"
     >
       <div
-        class="sc-gsTCUz bNMdPI"
+        class="sc-bdfBwQ OPvhY"
       >
         <div
-          class="sc-eCssSg bppvqY"
+          class="sc-hKgILt Ddcon"
         >
           <svg
             aria-hidden="true"
@@ -109,7 +109,7 @@ exports[`<FormSignUp /> should render the form 1`] = `
           </svg>
         </div>
         <input
-          class="sc-dlfnbm gxVjuQ"
+          class="sc-gsTCUz gcCRQr"
           name="password"
           placeholder="Password"
           type="password"
@@ -118,13 +118,13 @@ exports[`<FormSignUp /> should render the form 1`] = `
       </div>
     </div>
     <div
-      class="sc-gKsewC dycbEO"
+      class="sc-jSgupP eplsmf"
     >
       <div
-        class="sc-gsTCUz bNMdPI"
+        class="sc-bdfBwQ OPvhY"
       >
         <div
-          class="sc-eCssSg bppvqY"
+          class="sc-hKgILt Ddcon"
         >
           <svg
             aria-hidden="true"
@@ -151,8 +151,8 @@ exports[`<FormSignUp /> should render the form 1`] = `
           </svg>
         </div>
         <input
-          class="sc-dlfnbm gxVjuQ"
-          name="confirm-password"
+          class="sc-gsTCUz gcCRQr"
+          name="confirm_password"
           placeholder="Confirm password"
           type="password"
           value=""
@@ -160,15 +160,17 @@ exports[`<FormSignUp /> should render the form 1`] = `
       </div>
     </div>
     <button
-      class="sc-bdfBwQ bICrhb"
+      class="sc-gKsewC lnvBIF"
       type="submit"
     >
       <span>
-        Sign up now
+        <span>
+          Sign up now
+        </span>
       </span>
     </button>
     <div
-      class="sc-fubCfw dfAEFy"
+      class="sc-jrAGrp gtXVyl"
     >
       Already have an account?
        
