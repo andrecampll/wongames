@@ -32,7 +32,7 @@ exports[`<FormSignUp /> should render the form 1`] = `
           </svg>
         </div>
         <input
-          class="sc-dlfnbm dnQXQN"
+          class="sc-dlfnbm gxVjuQ"
           name="name"
           placeholder="Name"
           type="name"
@@ -67,7 +67,7 @@ exports[`<FormSignUp /> should render the form 1`] = `
           </svg>
         </div>
         <input
-          class="sc-dlfnbm dnQXQN"
+          class="sc-dlfnbm gxVjuQ"
           name="email"
           placeholder="Email"
           type="email"
@@ -109,7 +109,7 @@ exports[`<FormSignUp /> should render the form 1`] = `
           </svg>
         </div>
         <input
-          class="sc-dlfnbm dnQXQN"
+          class="sc-dlfnbm gxVjuQ"
           name="password"
           placeholder="Password"
           type="password"
@@ -151,7 +151,7 @@ exports[`<FormSignUp /> should render the form 1`] = `
           </svg>
         </div>
         <input
-          class="sc-dlfnbm dnQXQN"
+          class="sc-dlfnbm gxVjuQ"
           name="confirm-password"
           placeholder="Confirm password"
           type="password"
