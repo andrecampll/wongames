@@ -2,76 +2,88 @@
 
 exports[`CartList should be able to render 1`] = `
 <main
-  class="sc-dQppl YkPUn"
+  class="sc-kstrdz gXjLku"
 >
   <div
-    class="sc-jSgupP hnZGpM"
+    class="sc-hBEYos ieNNDx"
   >
     <div
-      class="sc-gKsewC jSeLHy"
+      class="sc-jSgupP hnZGpM"
     >
       <div
-        class="sc-iBPRYJ bZbbiG"
+        class="sc-gKsewC jSeLHy"
       >
-        <img
-          alt="Red Dead Redemption 2"
-          src="https://source.unsplash.com/user/willianjusten/151x70"
-        />
+        <div
+          class="sc-iBPRYJ bZbbiG"
+        >
+          <img
+            alt="Red Dead Redemption 2"
+            src="https://source.unsplash.com/user/willianjusten/151x70"
+          />
+        </div>
+        <div
+          class="sc-fubCfw bpBGEF"
+        >
+          <h3
+            class="sc-kEjbxe gNpxNo"
+          >
+            Red Dead Redemption 2
+          </h3>
+          <div
+            class="sc-pFZIQ lppYwz"
+          >
+            <p
+              class="sc-iqHYGH cjANlT"
+            >
+              R$ 215,00
+            </p>
+          </div>
+        </div>
       </div>
+    </div>
+    <div
+      class="sc-jSgupP hnZGpM"
+    >
       <div
-        class="sc-fubCfw fuuBOu"
+        class="sc-gKsewC jSeLHy"
       >
-        <h3
-          class="sc-pFZIQ hXPbHb"
+        <div
+          class="sc-iBPRYJ bZbbiG"
         >
-          Red Dead Redemption 2
-        </h3>
-        <p
-          class="sc-jrAGrp dzLsER"
+          <img
+            alt="Borderlands 3"
+            src="https://source.unsplash.com/user/willianjusten/151x70"
+          />
+        </div>
+        <div
+          class="sc-fubCfw bpBGEF"
         >
-          R$ 215,00
-        </p>
+          <h3
+            class="sc-kEjbxe gNpxNo"
+          >
+            Borderlands 3
+          </h3>
+          <div
+            class="sc-pFZIQ lppYwz"
+          >
+            <p
+              class="sc-iqHYGH cjANlT"
+            >
+              R$ 215,00
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div
-    class="sc-jSgupP hnZGpM"
-  >
-    <div
-      class="sc-gKsewC jSeLHy"
-    >
-      <div
-        class="sc-iBPRYJ bZbbiG"
-      >
-        <img
-          alt="Borderlands 3"
-          src="https://source.unsplash.com/user/willianjusten/151x70"
-        />
-      </div>
-      <div
-        class="sc-fubCfw fuuBOu"
-      >
-        <h3
-          class="sc-pFZIQ hXPbHb"
-        >
-          Borderlands 3
-        </h3>
-        <p
-          class="sc-jrAGrp dzLsER"
-        >
-          R$ 215,00
-        </p>
-      </div>
-    </div>
-  </div>
-  <div
-    class="sc-kstrdz kdCJOz"
+    class="sc-fFubgz hfMkoR"
   >
     <span>
       Total:
     </span>
     <span
-      class="sc-hBEYos cjSLUH"
+      class="sc-bkzZxe dJFdXZ"
     >
       R$ 330,00
     </span>

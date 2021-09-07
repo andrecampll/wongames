@@ -140,8 +140,9 @@ exports[`GameCard should be able to render correctly 1`] = `
   padding: 0.8rem;
   -webkit-text-decoration: none;
   text-decoration: none;
-  height: 3rem;
-  font-size: 1.2rem;
+  height: 4rem;
+  font-size: 1.4rem;
+  padding: 0.8rem 3.2rem;
 }
 
 .c10:hover {

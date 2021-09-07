@@ -25,8 +25,14 @@ describe('<TextField />', () => {
   });
 
   it('Changes its value when typing', async () => {
-    const onInput = jest.fn();
-    render(<TextField onInput={onInput} label="TextField" name="TextField" />);
+    const onInputChange = jest.fn();
+    render(
+      <TextField
+        onInputChange={onInputChange}
+        label="TextField"
+        name="TextField"
+      />,
+    );
 
     const input = screen.getByRole('textbox');
     const text = 'This is my new text';
@@ -34,9 +40,9 @@ describe('<TextField />', () => {
 
     await waitFor(() => {
       expect(input).toHaveValue(text);
-      expect(onInput).toHaveBeenCalledTimes(text.length);
+      expect(onInputChange).toHaveBeenCalledTimes(text.length);
     });
-    expect(onInput).toHaveBeenCalledWith(text);
+    expect(onInputChange).toHaveBeenCalledWith(text);
   });
 
   it('Is accessible by tab', () => {
@@ -81,11 +87,11 @@ describe('<TextField />', () => {
   });
 
   it('Does not changes its value when disabled', async () => {
-    const onInput = jest.fn();
+    const onInputChange = jest.fn();
 
     render(
       <TextField
-        onInput={onInput}
+        onInputChange={onInputChange}
         label="TextField"
         name="TextField"
         disabled
@@ -102,7 +108,7 @@ describe('<TextField />', () => {
     await waitFor(() => {
       expect(input).not.toHaveValue(text);
     });
-    expect(onInput).not.toHaveBeenCalled();
+    expect(onInputChange).not.toHaveBeenCalled();
   });
 
   it('Renders with error', () => {
