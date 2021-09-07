@@ -2,6 +2,7 @@ import { ApolloProvider } from '@apollo/client';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
+import NextNprogress from 'nextjs-progressbar';
 import { CartProvider } from '../hooks/cart/useCart';
 import GlobalStyles from '../styles/GlobalStyles';
 import theme from '../styles/theme';
@@ -21,11 +22,17 @@ export default function App({ Component, pageProps }: AppProps) {
 
             <meta
               name="description"
-              content="The best Game Stores in the world!"
+              content="The best Game Store in the world!"
             />
           </Head>
 
           <GlobalStyles />
+          <NextNprogress
+            color="#F231A5"
+            startPosition={0.3}
+            stopDelayMs={200}
+            height={5}
+          />
         </ThemeProvider>
       </CartProvider>
     </ApolloProvider>
