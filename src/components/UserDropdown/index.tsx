@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-wrap-multilines */
 import NextLink from 'next/link';
+import { signOut } from 'next-auth/client';
 import {
   AccountCircle,
   FavoriteBorder,
@@ -40,12 +41,10 @@ const UserDropdown = ({ username }: UserDropdownProps) => (
         </Link>
       </NextLink>
 
-      <NextLink href="/logout" passHref>
-        <Link title="Sign out">
-          <ExitToApp />
-          <span>Sign out</span>
-        </Link>
-      </NextLink>
+      <Link role="button" onClick={() => signOut()} title="Sign out">
+        <ExitToApp />
+        <span>Sign out</span>
+      </Link>
     </Nav>
   </Dropdown>
 );

@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-expressions */
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { signIn } from 'next-auth/client';
 import { AccountCircle, Email, Lock } from '@styled-icons/material-outlined';
 import { useMutation } from '@apollo/client';
 import { MUTATION_REGISTER } from '../../graphql/mutations/register';
@@ -17,7 +19,17 @@ const FormSignUp = () => {
     password: '',
   });
 
-  const [register] = useMutation(MUTATION_REGISTER);
+  const [register, { error }] = useMutation(MUTATION_REGISTER, {
+    onError: err => err,
+    onCompleted: () => {
+      !error &&
+        signIn('credentials', {
+          email: values.email,
+          password: values.password,
+          callbackUrl: '/',
+        });
+    },
+  });
 
   const handleInput = async (field: string, value: string) => {
     setValues(s => ({ ...s, [field]: value }));

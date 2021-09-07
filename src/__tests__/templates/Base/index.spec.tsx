@@ -2,6 +2,12 @@ import { screen } from '@testing-library/react';
 import Base from '../../../templates/Base';
 import { render } from '../../../utils/test-utils';
 
+jest.mock('next-auth/client', () => ({
+  useSession: jest.fn(() => {
+    return [{ session: null }];
+  }),
+}));
+
 jest.mock('../../../components/Menu', () => {
   return {
     __esModule: true,

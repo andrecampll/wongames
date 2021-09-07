@@ -83,20 +83,23 @@ exports[`FormSignIn should be able to render the Form 1`] = `
       </div>
     </div>
     <a
-      class="sc-pFZIQ hWaBtw"
+      class="sc-jrAGrp fZBjM"
       href="#"
     >
       Forgot your password?
     </a>
     <button
       class="sc-bdfBwQ bICrhb"
+      type="submit"
     >
       <span>
-        Sign in now
+        <span>
+          Sign in now
+        </span>
       </span>
     </button>
     <div
-      class="sc-fubCfw dfAEFy"
+      class="sc-pFZIQ bsPrjV"
     >
       Don't have an account?
        

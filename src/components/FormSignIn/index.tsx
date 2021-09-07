@@ -1,40 +1,74 @@
-import { Email, Lock } from '@styled-icons/material-outlined';
+import React, { useState } from 'react';
+import { signIn } from 'next-auth/client';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
+
+import { Email, Lock } from '@styled-icons/material-outlined';
+
 import Button from '../Button';
 import TextField from '../TextField';
-import { FormWrapper, FormLink } from '../Form';
+import { FormWrapper, FormLink, FormLoading } from '../Form';
 import { ForgotPassword } from './styles';
 
-const FormSignIn = () => (
-  <FormWrapper>
-    <form>
-      <TextField
-        name="email"
-        placeholder="E-mail"
-        type="email"
-        icon={<Email />}
-      />
-      <TextField
-        name="password"
-        placeholder="Password"
-        type="password"
-        icon={<Lock />}
-      />
+const FormSignIn = () => {
+  const [values, setValues] = useState({});
+  const [loading, setLoading] = useState(false);
+  const { push } = useRouter();
 
-      <ForgotPassword href="#">Forgot your password?</ForgotPassword>
+  const handleInput = (field: string, value: string) => {
+    setValues(s => ({ ...s, [field]: value }));
+  };
 
-      <Button size="large" fullWidth>
-        Sign in now
-      </Button>
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    setLoading(true);
 
-      <FormLink>
-        Don&apos;t have an account?{' '}
-        <Link href="/sign-up">
-          <a>Sign up</a>
-        </Link>
-      </FormLink>
-    </form>
-  </FormWrapper>
-);
+    const result = await signIn('credentials', {
+      ...values,
+      redirect: false,
+      callbackUrl: '/',
+    });
+
+    if (result?.url) {
+      return push(result?.url);
+    }
+
+    setLoading(false);
+  };
+
+  return (
+    <FormWrapper>
+      <form onSubmit={handleSubmit}>
+        <TextField
+          name="email"
+          placeholder="E-mail"
+          type="email"
+          onInputChange={v => handleInput('email', v)}
+          icon={<Email />}
+        />
+        <TextField
+          name="password"
+          placeholder="Password"
+          type="password"
+          onInputChange={v => handleInput('password', v)}
+          icon={<Lock />}
+        />
+
+        <ForgotPassword href="#">Forgot your password?</ForgotPassword>
+
+        <Button type="submit" size="large" fullWidth disabled={loading}>
+          {loading ? <FormLoading /> : <span>Sign in now</span>}
+        </Button>
+
+        <FormLink>
+          Don&apos;t have an account?{' '}
+          <Link href="/sign-up">
+            <a>Sign up</a>
+          </Link>
+        </FormLink>
+      </form>
+    </FormWrapper>
+  );
+};
 
 export default FormSignIn;
