@@ -4,20 +4,31 @@ import TextField from '../TextField';
 
 import { Form } from './styles';
 
-const FormProfile = () => (
+export type FormProfileProps = {
+  username?: string;
+  email?: string;
+};
+
+const FormProfile = ({ email, username }: FormProfileProps) => (
   <>
     <Heading color="black" lineBottom size="small">
       My profile
     </Heading>
 
     <Form>
-      <TextField name="name" placeholder="Name" label="Name" />
+      <TextField
+        name="username"
+        placeholder="Username"
+        label="Username"
+        initialValue={username}
+      />
 
       <TextField
         name="email"
         type="e-mail"
         placeholder="E-mail"
         label="E-mail"
+        initialValue={email}
         disabled
       />
 
