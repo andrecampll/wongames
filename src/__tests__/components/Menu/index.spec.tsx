@@ -47,4 +47,11 @@ describe('Menu', () => {
     expect(screen.queryByText(/log in now/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/sign up/i)).not.toBeInTheDocument();
   });
+
+  it('should not show sign ir or dropdownUser if loading', () => {
+    render(<Menu username="will" loading />);
+
+    expect(screen.queryByText(/my profile/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/sign in/i)).not.toBeInTheDocument();
+  });
 });
