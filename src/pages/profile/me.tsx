@@ -1,12 +1,15 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { GetServerSidePropsContext } from 'next';
-import Profile from '../../templates/Profile';
-import FormProfile from '../../components/FormProfile';
+import { useMe } from '../../hooks/pages/useMe';
 import protectedRoutes from '../../utils/protectedUtils';
 
-export default function Me() {
+import FormProfile, { FormProfileProps } from '../../components/FormProfile';
+import Profile from '../../templates/Profile';
+
+export default function Me(props: FormProfileProps) {
   return (
     <Profile>
-      <FormProfile />
+      <FormProfile {...props} />
     </Profile>
   );
 }
@@ -14,7 +17,9 @@ export default function Me() {
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const session = await protectedRoutes(context);
 
+  const { email, username } = await useMe(session);
+
   return {
-    props: { session },
+    props: { session, username, email },
   };
 }
