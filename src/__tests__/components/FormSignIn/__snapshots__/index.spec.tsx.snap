@@ -84,7 +84,7 @@ exports[`FormSignIn should be able to render the Form 1`] = `
     </div>
     <a
       class="sc-kEjbxe ksucYf"
-      href="#"
+      href="/forgot-password"
     >
       Forgot your password?
     </a>
