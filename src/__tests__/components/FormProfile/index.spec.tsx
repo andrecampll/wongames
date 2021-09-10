@@ -25,10 +25,8 @@ describe('FormProfile', () => {
     ).toBeInTheDocument();
 
     expect(
-      screen.getByPlaceholderText(/type your password/i),
+      screen.getByRole('link', { name: /reset password/i }),
     ).toBeInTheDocument();
-
-    expect(screen.getByPlaceholderText(/new password/i)).toBeInTheDocument();
 
     expect(
       screen.getByRole('button', {
