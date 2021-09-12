@@ -6,7 +6,7 @@ import NextNprogress from 'nextjs-progressbar';
 
 import { Provider as AuthProvider } from 'next-auth/client';
 import { CartProvider } from '../hooks/cart/useCart';
-import { WishlistProvider } from '../hooks/useWishlist';
+import { WishlistProvider } from '../hooks/wishlist/useWishlist';
 import GlobalStyles from '../styles/GlobalStyles';
 import theme from '../styles/theme';
 import { useApollo } from '../utils/apollo';
