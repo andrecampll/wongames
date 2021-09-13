@@ -19,7 +19,7 @@ describe('Form', () => {
             class="sc-iBPRYJ hlxcom"
           >
             <div
-              class="sc-jrAGrp gtXVyl"
+              class="sc-kEjbxe jIJKxq"
             >
               My nice 
               <a
