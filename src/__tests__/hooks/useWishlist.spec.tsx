@@ -4,16 +4,33 @@ import {
   useWishlist,
   WishlistProvider,
 } from '../../hooks/wishlist/useWishlist';
-import { wishlistMock } from '../../hooks/wishlist/mock';
+import { wishlistMock, wishlistItems } from '../../hooks/wishlist/mock';
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const useSession = jest.spyOn(require('next-auth/client'), 'useSession');
+
+const session = { jwt: '123', user: { email: 'lorem@ipsum.com' } };
+useSession.mockImplementation(() => [session]);
 
 describe('useWishlist', () => {
-  it('should return wishlist items', () => {
+  it('should return wishlist items', async () => {
     const wrapper = ({ children }: { children: React.ReactNode }) => (
       <MockedProvider mocks={[wishlistMock]}>
         <WishlistProvider>{children}</WishlistProvider>
       </MockedProvider>
     );
 
-    renderHook(() => useWishlist(), { wrapper });
+    const { result, waitForNextUpdate } = renderHook(() => useWishlist(), {
+      wrapper,
+    });
+
+    expect(result.current.loading).toBe(true);
+
+    await waitForNextUpdate();
+
+    expect(result.current.items).toStrictEqual([
+      wishlistItems[0],
+      wishlistItems[1],
+    ]);
   });
 });
