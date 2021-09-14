@@ -27,7 +27,7 @@ export const WishlistContextDefaultValues = {
   loading: false,
 };
 
-const WishlistContext = createContext<WishlistContextDTO>(
+export const WishlistContext = createContext<WishlistContextDTO>(
   WishlistContextDefaultValues,
 );
 
@@ -63,7 +63,7 @@ const WishlistProvider = ({ children }: WishlistProviderProps) => {
     },
   );
 
-  const { data, loading } = useQueryWishlist({
+  const { data, loading: loadingQuery } = useQueryWishlist({
     skip: !session?.user?.email,
     context: {
       session,
@@ -104,7 +104,18 @@ const WishlistProvider = ({ children }: WishlistProviderProps) => {
     });
   };
 
-  const removeFromWishlist = (id: string) => id;
+  const removeFromWishlist = (id: string) => {
+    updateList({
+      variables: {
+        input: {
+          where: { id: wishlistId },
+          data: {
+            games: wishlistGamesIds.filter((gameId: string) => gameId !== id),
+          },
+        },
+      },
+    });
+  };
 
   return (
     <WishlistContext.Provider
@@ -113,7 +124,7 @@ const WishlistProvider = ({ children }: WishlistProviderProps) => {
         isInWishlist,
         addToWishlist,
         removeFromWishlist,
-        loading: loading || loadingCreate || loadingUpdate,
+        loading: loadingQuery || loadingCreate || loadingUpdate,
       }}
     >
       {children}
