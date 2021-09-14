@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { FavoriteBorder, Favorite } from '@styled-icons/material-outlined';
 import {
   Wrapper,
   ImageBox,
@@ -14,6 +13,7 @@ import {
 import Ribbon, { RibbonColors, RibbonSizes } from '../Ribbon';
 import { formatPrice } from '../../utils/format-price';
 import { CartButton } from '../CartButton';
+import { WishlistButton } from '../WishlistButton';
 
 export type GameCardProps = {
   id: string;
@@ -38,8 +38,6 @@ const GameCard = ({
   image,
   price,
   promotionalPrice,
-  favorite = false,
-  onFav,
   ribbon,
   ribbonSize = 'small',
   ribbonColor = 'primary',
@@ -62,12 +60,8 @@ const GameCard = ({
           <Developer>{developer}</Developer>
         </Info>
       </Link>
-      <FavButton role="button" onClick={onFav}>
-        {favorite ? (
-          <Favorite aria-label="Remove from Wishlist" />
-        ) : (
-          <FavoriteBorder aria-label="Add to Wishlist" />
-        )}
+      <FavButton>
+        <WishlistButton id={id} />
       </FavButton>
       <BuyBox>
         {!!promotionalPrice && (
