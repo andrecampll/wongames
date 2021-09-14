@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 // import { useSession } from 'next-auth/client';
 import { Favorite, FavoriteBorder } from '@styled-icons/material-outlined';
 import { useWishlist } from '../../hooks/wishlist/useWishlist';
@@ -15,12 +16,11 @@ export const WishlistButton = ({
   size = 'small',
 }: WishlistButtonProps) => {
   // const [session] = useSession();
-  const {
-    isInWishlist,
-    // addToWishlist,
-    // removeFromWishlist,
-    // items,
-  } = useWishlist();
+  const { isInWishlist, removeFromWishlist, addToWishlist } = useWishlist();
+
+  const handleClick = () => {
+    isInWishlist(id) ? removeFromWishlist(id) : addToWishlist(id);
+  };
 
   const ButtonText = isInWishlist(id)
     ? 'Remove from Wishlist'
@@ -35,6 +35,7 @@ export const WishlistButton = ({
           <FavoriteBorder aria-label={ButtonText} />
         )
       }
+      onClick={handleClick}
       minimal
       size={size}
     >
