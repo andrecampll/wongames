@@ -9,4 +9,13 @@ export default new InMemoryCache({
       },
     },
   },
+  Wishlist: {
+    fields: {
+      games: {
+        merge(_, incoming) {
+          return incoming;
+        },
+      },
+    },
+  },
 });
