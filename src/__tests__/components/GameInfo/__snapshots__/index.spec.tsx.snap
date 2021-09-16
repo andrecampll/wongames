@@ -2,7 +2,7 @@
 
 exports[`GameInfo should be able to render game information 1`] = `
 <div
-  class="sc-hKgILt dUIzsP"
+  class="sc-eCssSg dHsiHY"
 >
   <h2
     class="sc-bdfBwQ gvBnTC"
@@ -17,15 +17,15 @@ exports[`GameInfo should be able to render game information 1`] = `
     $210.00
   </div>
   <p
-    class="sc-eCssSg hZUBSK"
+    class="sc-jSgupP kZrrCD"
   >
     Game description
   </p>
   <div
-    class="sc-jSgupP hmhGCB"
+    class="sc-gKsewC coMbzQ"
   >
     <button
-      class="sc-dlfnbm MPnKe"
+      class="sc-dlfnbm jZeNUn"
     >
       <svg
         aria-hidden="true"
@@ -49,10 +49,11 @@ exports[`GameInfo should be able to render game information 1`] = `
       </span>
     </button>
     <button
-      class="sc-dlfnbm izdDty"
+      class="sc-dlfnbm hRsQbH"
     >
       <svg
         aria-hidden="true"
+        aria-label="Add to Wishlist"
         class="StyledIconBase-ea9ulj-0 cKCFNq"
         fill="currentColor"
         focusable="false"
@@ -68,7 +69,7 @@ exports[`GameInfo should be able to render game information 1`] = `
         />
       </svg>
       <span>
-        Wishlist
+        Add to Wishlist
       </span>
     </button>
   </div>

@@ -89,7 +89,7 @@ exports[`FormSignIn should be able to render the Form 1`] = `
       Forgot your password?
     </a>
     <button
-      class="sc-bdfBwQ bICrhb"
+      class="sc-bdfBwQ hwlbJG"
       type="submit"
     >
       <span>

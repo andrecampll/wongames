@@ -62,7 +62,7 @@ exports[`BannerSlider should be able to render vertical slider 1`] = `
                     </p>
                   </h3>
                   <a
-                    class="sc-gsTCUz gGfneM"
+                    class="sc-gsTCUz cohTjt"
                     href="/games/defy-death"
                   >
                     <span>
@@ -110,7 +110,7 @@ exports[`BannerSlider should be able to render vertical slider 1`] = `
                     </p>
                   </h3>
                   <a
-                    class="sc-gsTCUz gGfneM"
+                    class="sc-gsTCUz cohTjt"
                     href="/games/defy-death"
                   >
                     <span>
@@ -209,7 +209,7 @@ exports[`BannerSlider should be able to render with 1 active item 1`] = `
                     </p>
                   </h3>
                   <a
-                    class="sc-gsTCUz gGfneM"
+                    class="sc-gsTCUz cohTjt"
                     href="/games/defy-death"
                   >
                     <span>
@@ -257,7 +257,7 @@ exports[`BannerSlider should be able to render with 1 active item 1`] = `
                     </p>
                   </h3>
                   <a
-                    class="sc-gsTCUz gGfneM"
+                    class="sc-gsTCUz cohTjt"
                     href="/games/defy-death"
                   >
                     <span>

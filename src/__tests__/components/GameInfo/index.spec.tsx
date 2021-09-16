@@ -1,3 +1,4 @@
+import '../../../../.jest/session.mock';
 import { screen } from '@testing-library/react';
 import { render } from '../../../utils/test-utils';
 import GameInfo from '../../../components/GameInfo';
@@ -36,7 +37,7 @@ describe('GameInfo', () => {
 
     expect(
       screen.getByRole('button', {
-        name: /wishlist/i,
+        name: /add to wishlist/i,
       }),
     ).toBeInTheDocument();
   });
