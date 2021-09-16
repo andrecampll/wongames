@@ -1,4 +1,5 @@
 /* eslint-disable import/no-unresolved */
+import '../../../../.jest/session.mock';
 import 'match-media-mock';
 import { screen } from '@testing-library/react';
 import gamesMock from '../../../components/GameCardSlider/mock';

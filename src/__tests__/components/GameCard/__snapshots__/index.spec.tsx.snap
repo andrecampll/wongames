@@ -146,6 +146,10 @@ exports[`GameCard should be able to render correctly 1`] = `
   color: #F231A5;
 }
 
+.c7:focus {
+  outline: 1px dashed;
+}
+
 .c7:hover {
   background: none;
 }
@@ -186,6 +190,10 @@ exports[`GameCard should be able to render correctly 1`] = `
   height: 4rem;
   font-size: 1.4rem;
   padding: 0.8rem 3.2rem;
+}
+
+.c11:focus {
+  outline: 1px dashed;
 }
 
 .c11:hover {

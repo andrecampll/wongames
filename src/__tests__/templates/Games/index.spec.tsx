@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+import '../../../../.jest/session.mock';
 import { screen } from '@testing-library/react';
 import { MockedProvider } from '@apollo/client/testing';
 // import userEvent from '@testing-library/user-event';

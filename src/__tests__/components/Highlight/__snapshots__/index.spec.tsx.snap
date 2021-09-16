@@ -79,6 +79,10 @@ exports[`Highlight should be able to render background image 1`] = `
   padding: 0.8rem 3.2rem;
 }
 
+.c6:focus {
+  outline: 1px dashed;
+}
+
 .c6:hover {
   background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
 }
@@ -226,6 +230,10 @@ exports[`Highlight should be able to render headings and button 1`] = `
   height: 4rem;
   font-size: 1.4rem;
   padding: 0.8rem 3.2rem;
+}
+
+.c6:focus {
+  outline: 1px dashed;
 }
 
 .c6:hover {
