@@ -7,25 +7,21 @@ import { Container } from '../../components/Container';
 import { GameCardProps } from '../../components/GameCard';
 import { HighlightProps } from '../../components/Highlight';
 import CartList, { CartListProps } from '../../components/CartList';
-import PaymentOptions, {
-  PaymentOptionsProps,
-} from '../../components/PaymentOptions';
+import PaymentForm from '../../components/PaymentForm';
 
 import { Content, Text } from './styles';
 
 export type CartPageProps = {
+  recommendedTitle: string;
   recommendedGames: GameCardProps[];
   recommendedHighlight: HighlightProps;
-} & CartListProps &
-  Pick<PaymentOptionsProps, 'cards'>;
+} & CartListProps;
 
 const Cart = ({
   recommendedGames,
   recommendedHighlight,
-  cards,
+  recommendedTitle,
 }: CartPageProps) => {
-  const handlePayment = () => ({});
-
   return (
     <Base>
       <Container>
@@ -36,7 +32,7 @@ const Cart = ({
         <Content>
           <CartList />
 
-          <PaymentOptions cards={cards} handlePayment={handlePayment} />
+          <PaymentForm />
         </Content>
         <Text>
           <Info size={18} /> Your purchase is protected by a secure connection
@@ -50,7 +46,7 @@ const Cart = ({
       </Container>
 
       <Showcase
-        title="You may like these games"
+        title={recommendedTitle}
         games={recommendedGames}
         highlight={recommendedHighlight}
       />
