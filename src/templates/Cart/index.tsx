@@ -1,3 +1,6 @@
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+
 import { Info } from '@styled-icons/material-outlined/Info';
 import Base from '../Base';
 import Heading from '../../components/Heading';
@@ -17,6 +20,8 @@ export type CartPageProps = {
   recommendedHighlight: HighlightProps;
 } & CartListProps;
 
+const stripe = loadStripe(`${process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}`);
+
 const Cart = ({
   recommendedGames,
   recommendedHighlight,
@@ -32,7 +37,9 @@ const Cart = ({
         <Content>
           <CartList />
 
-          <PaymentForm />
+          <Elements stripe={stripe}>
+            <PaymentForm />
+          </Elements>
         </Content>
         <Text>
           <Info size={18} /> Your purchase is protected by a secure connection
