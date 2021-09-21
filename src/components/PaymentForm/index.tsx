@@ -1,10 +1,10 @@
 import { useState, useEffect, FormEvent } from 'react';
 import { Session } from 'next-auth';
-import { CardElement } from '@stripe/react-stripe-js';
+import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { StripeCardElementChangeEvent } from '@stripe/stripe-js';
 import { ErrorOutline, ShoppingCart } from '@styled-icons/material-outlined';
 import { useCart } from '../../hooks/cart/useCart';
-import { useStripe } from '../../hooks/stripe/useStripe';
+import { useStripe as useLocalStripe } from '../../hooks/stripe/useStripe';
 
 import { FormLoading } from '../Form';
 import Button from '../Button';
@@ -18,18 +18,19 @@ type PaymentFormProps = {
 
 const PaymentForm = ({ session }: PaymentFormProps) => {
   const { items } = useCart();
+  const stripe = useStripe();
+  const elements = useElements();
+
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [disabled, setDisabled] = useState(true);
   const [clientSecret, setClientSecret] = useState('');
   const [freeGames, setFreeGames] = useState(false);
-  const { createPaymentIntent } = useStripe();
+  const { createPaymentIntent } = useLocalStripe();
 
   const handleChange = async (event: StripeCardElementChangeEvent) => {
     setDisabled(event.empty);
     setError(event.error ? event.error.message : '');
-
-    return clientSecret;
   };
 
   useEffect(() => {
@@ -62,6 +63,19 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     setLoading(true);
+
+    const payload = await stripe.confirmCardPayment(clientSecret, {
+      payment_method: {
+        card: elements.getElement(CardElement),
+      },
+    });
+
+    if (payload.error) {
+      setError(`Payment failed ${payload.error.message}`);
+    } else {
+      setError(null);
+      setLoading(false);
+    }
   };
 
   return (
