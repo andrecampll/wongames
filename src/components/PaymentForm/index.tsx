@@ -1,7 +1,7 @@
 import { useState, useEffect, FormEvent } from 'react';
 import { Session } from 'next-auth';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { StripeCardElementChangeEvent } from '@stripe/stripe-js';
+import { PaymentIntent, StripeCardElementChangeEvent } from '@stripe/stripe-js';
 import { ErrorOutline, ShoppingCart } from '@styled-icons/material-outlined';
 import { useRouter } from 'next/router';
 import { useCart } from '../../hooks/cart/useCart';
@@ -28,12 +28,7 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
   const [disabled, setDisabled] = useState(true);
   const [clientSecret, setClientSecret] = useState('');
   const [freeGames, setFreeGames] = useState(false);
-  const { createPaymentIntent } = useLocalStripe();
-
-  const handleChange = async (event: StripeCardElementChangeEvent) => {
-    setDisabled(event.empty);
-    setError(event.error ? event.error.message : '');
-  };
+  const { createPayment, createPaymentIntent } = useLocalStripe();
 
   useEffect(() => {
     async function setPaymentMode() {
@@ -60,13 +55,30 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
     }
 
     setPaymentMode();
-  }, [items, createPaymentIntent, session.jwt]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [items, session.jwt]);
+
+  const handleChange = async (event: StripeCardElementChangeEvent) => {
+    setDisabled(event.empty);
+    setError(event.error ? event.error.message : '');
+  };
+
+  const saveOrder = async (paymentIntent?: PaymentIntent) => {
+    const data = await createPayment({
+      items,
+      paymentIntent,
+      token: session.jwt as string,
+    });
+
+    return data;
+  };
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     setLoading(true);
 
     if (freeGames) {
+      saveOrder();
       push('/success');
       return;
     }
@@ -79,9 +91,11 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
 
     if (payload.error) {
       setError(`Payment failed ${payload.error.message}`);
+      setLoading(false);
     } else {
       setError(null);
       setLoading(false);
+      saveOrder(payload.paymentIntent);
       push('/success');
     }
   };
