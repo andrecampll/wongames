@@ -1,5 +1,5 @@
 # WonGames 🎮
-This repository refers to a awesome game store made with React 🚀 <br />
+This repository refers to a awesome game store made with Next.js 🚀 <br />
 
 <p align="center" t>
   <img src="./.github/logo.png" />
