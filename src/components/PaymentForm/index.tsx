@@ -83,11 +83,17 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
       return;
     }
 
+    // console.log(clientSecret);
+
+    // console.log(elements.getElement(CardElement));
+
     const payload = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
         card: elements.getElement(CardElement),
       },
     });
+
+    // console.log(payload);
 
     if (payload.error) {
       setError(`Payment failed ${payload.error.message}`);
@@ -141,7 +147,7 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
             icon={loading ? <FormLoading /> : <ShoppingCart />}
             disabled={!freeGames && (disabled || !!error)}
           >
-            Buy now
+            {!loading && <span>Buy now</span>}
           </Button>
         </Footer>
       </form>
