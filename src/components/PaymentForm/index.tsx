@@ -85,7 +85,11 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
 
     // console.log(clientSecret);
 
-    // console.log(elements.getElement(CardElement));
+    // console.log({
+    //   payment_method: {
+    //     card: elements.getElement(CardElement),
+    //   },
+    // });
 
     const payload = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
