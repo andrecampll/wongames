@@ -18,9 +18,9 @@ type PaymentFormProps = {
 };
 
 const PaymentForm = ({ session }: PaymentFormProps) => {
-  const { items } = useCart();
   const stripe = useStripe();
   const elements = useElements();
+  const { items } = useCart();
   const { push } = useRouter();
 
   const [error, setError] = useState<string | null>(null);
@@ -112,7 +112,7 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
 
   return (
     <Wrapper>
-      <form onSubmit={handleSubmit}>
+      <form id="payment-form" onSubmit={handleSubmit}>
         <Body>
           <Heading lineBottom color="black" size="small">
             Payment
@@ -122,6 +122,7 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
             <FreeGames>Only free games, click buy and enjoy!</FreeGames>
           ) : (
             <CardElement
+              id="card-element"
               options={{
                 hidePostalCode: true,
                 style: {
@@ -150,6 +151,7 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
             fullWidth
             icon={loading ? <FormLoading /> : <ShoppingCart />}
             disabled={!freeGames && (disabled || !!error)}
+            type="submit"
           >
             {!loading && <span>Buy now</span>}
           </Button>
